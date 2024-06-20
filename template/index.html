@@ -109,6 +109,7 @@
                 images.forEach(img => {
                     console.log(img.src);
                     if(img.src.includes('highsto.net')) return;
+                    if(img.src.includes('largeIllust')) return;
                     img.src = '../assets/images/textbook/common/errorGreen.png';
                     
                     // img.onerror = function () {
