@@ -1,0 +1,184 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 10px;
+}
+
+.page {
+    width: 375px;
+    height: 575px; /* 帯を除いた縦横比が 21:13.7 */
+    position: relative;
+    overflow: hidden;
+}
+
+.page * {
+    position: relative;
+    z-index: 5;
+}
+
+.leftPage {
+    color: white;
+}
+
+.largeIllust {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.name {
+    position: absolute;
+    writing-mode: vertical-rl;
+    top: 60px;
+    left: 0;
+    font-size: 6.4rem;
+}
+
+.name ruby {
+    font-size: 6.4rem;
+}
+
+.name rt {
+    font-size: 3.2rem;
+}
+
+.alias {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 2.4rem;
+}
+
+.alias ruby {
+    font-size: 2.4rem;
+}
+
+.alias rt {
+    font-size: 1.2rem;
+}
+
+.aboutIllust {
+    position: absolute;
+    width: 40%;
+}
+
+.aboutIllust h3 {
+    font-size: 1.6rem;
+}
+
+.aboutIllust p {
+    border-bottom: 1px solid white;
+    border-left: 1px solid white;
+    padding: 3px;
+    border-radius: 3px;
+}
+
+#aboutIllust1 {
+    top: calc(750% / 21);
+    right: 5%;
+}
+
+#aboutIllust2 {
+    top: calc(1000% / 21);
+    left: 5%;
+}
+
+
+
+.cardArea {
+    position: static;
+}
+
+.cardBGCircle {
+    width: 180px;
+    height: 180px;
+    position: absolute;
+    bottom: -30px;
+    left: -30px;
+    border-radius: 50%;
+    border: 5px solid white;
+}
+
+.cardBGCircle img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.card {
+    width: calc(63px * 2);
+    height: calc(88px * 2);
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    transform: rotate(20deg);
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+}
+
+
+
+.profile {
+    bottom: 20px;
+    left: 170px;
+    position: absolute;
+}
+
+.profile h3 {
+    font-size: 2.1rem;
+}
+
+.profileName {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.profileData {
+    font-size: 1.2rem;
+    padding-left: 10px;
+}
+
+.tips {
+    display: flex;
+    margin-top: 10px;
+    padding-right: 10px;
+}
+
+.tips img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    transform: translateX(-10px);
+}
+
+.tipsContent {
+    color: black;
+    background: white;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    padding: 3px;
+    position: relative;
+}
+
+.tipsContent::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -5px;
+    width: 0;
+    height: 0;
+    border: 5px solid transparent;
+    border-top-color: white;
+    transform: translateY(-50%);
+}
