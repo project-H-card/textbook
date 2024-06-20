@@ -25,7 +25,7 @@ fields = [
 
 DATA_WITH_RUBY_FILE_PATH = "data_with_ruby.csv"
 TEMPLATE_FILE_PATH = "templates/template.html"
-INDEX_TEMPLATE_FILE_PATH = "templates/template.html"
+INDEX_TEMPLATE_FILE_PATH = "templates/index_template.html"
 RESULT_DIR = "pages/"
 
 
@@ -51,6 +51,7 @@ def create_index_page(names_without_ruby):
 def main():
     with open(DATA_WITH_RUBY_FILE_PATH, "r", encoding="utf-8") as f:
         reader = csv.DictReader(f)
+        name_without_ruby_list = []
         for row in reader:
             name = row["名前"]
             name_without_ruby = remove_ruby_tags(name)
@@ -63,9 +64,12 @@ def main():
                     template = template.replace("{" + field + "ルビなし}", remove_ruby_tags(row[field]))
                 with open(os.path.join(dir_path, "index.html"), "w", encoding="utf-8") as result_f:
                     result_f.write(template)
-                    
+            name_without_ruby_list.append(name_without_ruby)
+
+        print(name_without_ruby_list)
+        create_index_page(name_without_ruby_list)
         
-        
-                    
+if __name__ == "__main__":
+    main()
 
 

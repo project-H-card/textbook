@@ -272,8 +272,9 @@ def main():
         data = list(reader)
     data = remove_columns_after_empty_array(data)
     
-    dont_need_ruby_columns_num = map(lambda column: header.index(column), DONT_NEED_RUBY_COLUMNS)
-    
+    dont_need_ruby_columns_num = list(map(lambda column: header.index(column), DONT_NEED_RUBY_COLUMNS))
+    # print(dont_need_ruby_columns_num)
+
     # data から ルビがいらない列を削除
     ruby_rows = []
     for row in data:
