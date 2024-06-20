@@ -1,7 +1,28 @@
+@font-face {
+    font-family: 'Noto Sans JP';
+    src: url("../../assets/fonts/NotoSansJP-VariableFont_wght.ttf");
+}
+
+@font-face {
+    font-family: 'TsunagiGothic';
+    src: url("../../assets/fonts/TsunagiGothic.ttf");
+}
+
+@font-face {
+    font-family: 'ZenMaruGothic';
+    src: url("../../assets/fonts/ZenMaruGothic-Medium.ttf");
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'ZenMaruGothic', 'Noto Sans JP', sans-serif;
+}
+
+h2, h3, h2 *, h3 * {
+    font-family: 'TsunagiGothic';
+    font-weight: normal;
 }
 
 :root {
@@ -52,6 +73,11 @@
     left: 0;
     font-size: 6.4rem;
     text-shadow: 0px 0px 6px black;
+    font-family: 'Noto Sans JP';
+}
+
+.name * {
+    font-family: 'Noto Sans JP';
 }
 
 .name ruby {
@@ -68,6 +94,11 @@
     left: 10px;
     font-size: 2.4rem;
     text-shadow: 0px 0px 6px black;
+    font-family: 'Noto Sans JP';
+}
+
+.alias * {
+    font-family: 'Noto Sans JP';
 }
 
 .alias ruby {
@@ -208,11 +239,6 @@
 .rightPage {
     color: black;
     background: url("../../assets/images/textbook/common/rightBG.png");
-}
-
-img {
-    width: 10px;
-    height: 10px;
 }
 
 .rightPage > div {
