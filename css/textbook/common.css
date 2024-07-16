@@ -25,6 +25,10 @@ h2, h3, h2 *, h3 * {
     font-weight: normal;
 }
 
+p {
+    line-height: 200%;
+}
+
 :root {
     font-size: 10px;
 }
@@ -48,6 +52,12 @@ h2, h3, h2 *, h3 * {
 .page * {
     position: relative;
     z-index: 5;
+}
+
+.mini {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
 }
 
 
@@ -116,6 +126,14 @@ h2, h3, h2 *, h3 * {
 
 .aboutIllust h3 {
     font-size: 1.6rem;
+    display: flex;
+    align-items: center;
+}
+
+.aboutIllust h3 .mini {
+    width: 24px;
+    height: 24px;
+    margin-right: 5px;
 }
 
 .aboutIllust p {
@@ -238,7 +256,7 @@ h2, h3, h2 *, h3 * {
 /* 右ページ */
 .rightPage {
     color: black;
-    background: url("../../assets/images/textbook/common/rightBG.png");
+    background: url("../../assets/images/textbook/common/rightBG.webp");
 }
 
 .rightPage > div {
@@ -303,17 +321,52 @@ h2, h3, h2 *, h3 * {
 .aboutPersonContents {
     display: flex;
     justify-content: space-between;
-    align-items: end;
+    align-items: center;
+    width: 105%;
+}
+
+.aboutPersonMain {
+    display: flex;
+    justify-content: start;
+    width: 54%;
+    margin-top: 5px;
+}
+
+.aboutPersonLeft .mini {
+    width: 24px;
+    height: 24px;
+}
+
+#aboutPersonCharacter {
+    font-family: "TsunagiGothic";
+    margin-left: 5px;
 }
 
 .aboutPersonExplain {
-    width: 45%;
+    width: 100%;
     font-size: 0.8rem;
+    padding: 10px;
+    border-radius: 4px;
+    background: white;
+    margin-left: 5px;
+    margin-top: 5px;
+}
+
+.aboutPersonExplain::after {
+    content: '';
+    position: absolute;
+    top: 10%;
+    left: -5px;
+    width: 0;
+    height: 0;
+    border: 5px solid transparent;
+    border-top-color: white;
+    transform: translateY(-50%);
 }
 
 .columnArea {
-    width: 45%;
-    transform: translateX(20px);
+    width: 46%;
+    transform: translateX(10px) translateY(20px);
 }
 
 .columnHeader {
@@ -334,6 +387,15 @@ h2, h3, h2 *, h3 * {
 
 .columnContents {
     font-size: 0.8rem;
+    text-shadow: white 0px 0px 2px;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+.aboutSkillArea {
+    padding: 10px 0;
+    border-top: 1px #545454 dotted;
+    border-bottom: 1px #545454 dotted;
 }
 
 .aboutSkillContents {
@@ -343,10 +405,22 @@ h2, h3, h2 *, h3 * {
 }
 
 .aboutSkillContent {
-    width: 45%;
+    width: 48%;
 }
 
 .skillTitle {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.skillTitle .mini {
+    width: 24px;
+    height: 24px;
+    margin-right: 5px;
+}
+
+.skillTitle span {
     background: #EE7800;
     color: white;
     font-size: 1.6rem;
@@ -356,10 +430,11 @@ h2, h3, h2 *, h3 * {
 }
 .skillTitle rt {
     text-shadow: #EE7800 0px 0px 2px;
+    font-size: 0.6rem;
 }
 
 .skillExplain {
-    font-size: 0.8rem;
+    font-size: 1rem;
     margin: 10px 0;
 }
 

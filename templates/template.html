@@ -17,17 +17,23 @@
                 <h2 class="alias">{異名}</h2>
 
                 <div class="aboutIllust" id="aboutIllust1">
-                    <h3>{イラスト説明1のタイトル}</h3>
+                    <h3>
+                        <img src="../../assets/images/textbook/common/mini/{イラスト説明1キャラ}.webp" alt="{イラスト説明1のタイトルルビなし}" class="mini">
+                        <span>{イラスト説明1のタイトル}</span>
+                    </h3>
                     <p>{イラスト説明1}</p>
                 </div>
 
                 <div class="aboutIllust" id="aboutIllust2">
-                    <h3>{イラスト説明2のタイトル}</h3>
+                    <h3>
+                        <img src="../../assets/images/textbook/common/mini/{イラスト説明2キャラ}.webp" alt="{イラスト説明2のタイトルルビなし}" class="mini">
+                        <span>{イラスト説明2のタイトル}</span>
+                    </h3>
                     <p>{イラスト説明2}</p>
                 </div>
 
                 <div class="cardArea">
-                    <div class="cardBGCircle"><img src="../../assets/images/textbook/common/cardBGCircle.png" alt="カード模様">
+                    <div class="cardBGCircle"><img src="../../assets/images/textbook/common/card_bg_circle.webp" alt="カード模様">
                     </div>
                     <div class="card">
                         <img
@@ -52,7 +58,7 @@
                         <span class="profileData">{身分}</span>
                     </div>
                     <div class="tips">
-                        <img src="../../assets/images/textbook/common/hamabou_mini1.png" alt="豆知識を披露するハマボウ">
+                        <img src="../../assets/images/textbook/mini_circle/{名前ルビなし}.webp" alt="豆知識" class="mini">
                         <div class="tipsContent">{豆知識}</div>
                     </div>
                 </div>
@@ -64,11 +70,19 @@
                     <img src="../../assets/images/textbook/about_person_circle/{名前ルビなし}.webp" alt="{名前ルビなし}の画像" class="aboutPersonCircle">
                     <h2 class="sectionTitleArea">
                         <div class="titleLeftBar"></div>
-                        <img src="../../assets/images/textbook/common/shun_mini1.png" alt="シュン">
+                        <img src="../../assets/images/textbook/common/mini/{どんな人？トップキャラ}.webp" alt="どんな人？" class="mini">
                         <div class="sectionTitle">{名前}ってどんなひと？</div>
                     </h2>
                     <div class="aboutPersonContents">
-                        <p class="aboutPersonExplain">{どんな人？}</p>
+                        <div class="aboutPersonMain">
+                            <div class="aboutPersonLeft">
+                                <img src="../../assets/images/textbook/common/mini/{どんな人？内容キャラ}.webp" alt="どんな人？" class="mini" id="aboutPersonCharacterImage">
+                            </div>
+                            <div class="aboutPersonRight">
+                                <span id="aboutPersonCharacter"></span>
+                                <p class="aboutPersonExplain">{どんな人？}</p>
+                            </div>
+                        </div>
                         <div class="columnArea">
                             <div class="columnHeader">
                                 <h3 class="columnTitle">コラム</h3><span class="onRightTop">（カード<ruby>右上<rt>みぎうえ</rt></ruby>）</span>
@@ -81,17 +95,23 @@
                 <div class="aboutSkillArea">
                     <h2 class="sectionTitleArea">
                         <div class="titleLeftBar"></div>
-                        <img src="../../assets/images/textbook/common/shun_mini1.png" alt="シュン">
+                        <img src="../../assets/images/textbook/common/mini/{効果解説トップキャラ}.webp" alt="効果解説" class="mini">
                         <div class="sectionTitle">カードの<ruby>効果解説<rt>こうかかいせつ</rt></ruby>！</div>
                     </h2>
                     <div class="aboutSkillContents">
                         <div class="aboutSkillContent">
-                            <h3 class="skillTitle">{効果名1}</h3>
+                            <h3 class="skillTitle">
+                                <img src="../../assets/images/textbook/common/mini/{効果解説1キャラ}.webp" alt="効果解説" class="mini">
+                                <span>{効果名1}</span>
+                            </h3>
                             <p class="skillExplain">{効果解説1}</p>
                             <img src="../../assets/images/textbook/skill/{効果名1ルビなし}.webp" alt="{効果名1ルビなし}" class="skillImage">
                         </div>
                         <div class="aboutSkillContent">
-                            <h3 class="skillTitle">{効果名2}</h3>
+                            <h3 class="skillTitle">
+                                <img src="../../assets/images/textbook/common/mini/{効果解説2キャラ}.webp" alt="効果解説" class="mini">
+                                <span>{効果名2}</span>
+                            </h3>
                             <p class="skillExplain">{効果解説2}</p>
                             <img src="../../assets/images/textbook/skill/{効果名2ルビなし}.webp" alt="{効果名2ルビなし}" class="skillImage">
                         </div>
@@ -99,25 +119,8 @@
                 </div>
 
                 <div class="finalArea">
-                    <h2 class="sectionTitleArea">
-                        <div class="titleLeftBar"></div>
-                        <img src="../../assets/images/textbook/common/shun_mini1.png" alt="シュン">
-                        <div class="sectionTitle"><ruby>弥生時代<rt>やよいじだい</rt></ruby>ってどんな<ruby>時代<rt>じだい</rt></ruby>？
-                        </div>
-                    </h2>
-                    <div class="finalContents">
-                        <p class="finalExplain"><ruby>弥生時代<rt>やよいじだい</rt></ruby>ってこんな<ruby>時代<rt>じだい</rt>
-                                </ruby>ってのをなんとなく。<ruby>時代<rt>じだい</rt></ruby>かぶってたりしたら<ruby>関連人物<rt>かんれんじんぶつ</rt>
-                                </ruby>との<ruby>繋<rt>つな</rt></ruby>がりについて<ruby>纏<rt>まと</rt></ruby>める<ruby>感<rt>かん</rt>
-                                </ruby>じで。<ruby>弥生時代<rt>やよいじだい</rt></ruby>ってこんな<ruby>時代<rt>じだい</rt>
-                                </ruby>ってのをなんとなく。<ruby>時代<rt>じだい</rt></ruby>かぶってたりしたら<ruby>関連人物<rt>かんれんじんぶつ</rt>
-                                </ruby>との<ruby>繋<rt>つな</rt></ruby>がりについて<ruby>纏<rt>まと</rt></ruby>める<ruby>感<rt>かん</rt>
-                                </ruby>じで。</p>
-                        <div class="finalIllust"><img src="../../assets/images/textbook/finalIllust/卑弥呼.png"
-                                alt="卑弥呼のイラスト"></div>
-                    </div>
                     <div class="finalQuiz">
-                        <img src="../../assets/images/textbook/mini_circle/{名前ルビなし}.png" alt="{名前ルビなし}の画像">
+                        <img src="../../assets/images/textbook/mini_circle/{名前ルビなし}.webp" alt="{名前ルビなし}の画像">
                         <div class="finalQuizContents">クイズ！：{クイズ}</div>
                     </div>
                 </div>
@@ -128,9 +131,15 @@
             images.forEach(img => {
                 img.addEventListener('error', () => {
                     console.log(img.src);
-                    img.src = '../../assets/images/textbook/common/errorGreen.png';
+                    img.src = '../../assets/images/textbook/common/errorGreen.webp';
                 });
             });
+
+            const aboutPersonCharacter = document.getElementById('aboutPersonCharacter');
+            const aboutPersonCharacterImage = document.getElementById('aboutPersonCharacterImage');
+            let characterName = decodeURIComponent(aboutPersonCharacterImage.src.split('/').pop().split('.')[0]);
+            characterName = characterName.slice(0, characterName.length - 1);
+            aboutPersonCharacter.textContent = characterName;
         </script>
     </main>
 </body>
