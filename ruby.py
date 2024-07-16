@@ -21,7 +21,7 @@ RESULT_FILE_PATH = "data_with_ruby.csv"
 SELF_RUBY_DATA_FILE_PATH = "ruby_data.csv"
 
 
-DONT_NEED_RUBY_COLUMNS = ["カード画像", "担当者"]
+DONT_NEED_RUBY_COLUMNS = ["カード画像"]
 
 # この値で join した状態でふりがなAPIに一斉送信する。
 COLUMN_SEPARATOR = ":"
