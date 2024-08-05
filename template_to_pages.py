@@ -34,6 +34,7 @@ fields = [
 DATA_WITH_RUBY_FILE_PATH = "data_with_ruby.csv"
 TEMPLATE_FILE_PATH = "templates/template.html"
 INDEX_TEMPLATE_FILE_PATH = "templates/index_template.html"
+PAGES_DIV_TEMPLATE_FILE_PATH = "templates/pages_div_template.html"
 RESULT_DIR = "pages/"
 
 
@@ -51,6 +52,14 @@ def create_index_page(names_without_ruby):
         template = template.replace("{links}", links)
         with open(os.path.join(RESULT_DIR, "index.html"), "w", encoding="utf-8") as result_f:
             result_f.write(template)
+            
+def create_all_page_file(page_divs):
+    with open("templates/all_template.html", "r", encoding="utf-8") as f:
+        template = f.read()
+        template = template.replace("{page_divs}", page_divs)
+        print(template[300:500])
+    with open(RESULT_DIR + "all/index.html", "w", encoding="utf-8") as result_f:
+        result_f.write(template)
 
 
 # DATA_WITH_RUBY_FILE_PATH のデータを元に、TEMPLATE_FILE_PATH のテンプレートを使って、RESULT_DIR にページを生成する。
@@ -60,11 +69,13 @@ def main():
     with open(DATA_WITH_RUBY_FILE_PATH, "r", encoding="utf-8") as f:
         reader = csv.DictReader(f)
         name_without_ruby_list = []
+        pages_divs = ""
         for row in reader:
             name = row["名前"]
             name_without_ruby = remove_ruby_tags(name)
             dir_path = os.path.join(RESULT_DIR, name_without_ruby)
             os.makedirs(dir_path, exist_ok=True)
+            
             with open(TEMPLATE_FILE_PATH, "r", encoding="utf-8") as template_f:
                 template = template_f.read()
                 for field in fields:
@@ -72,10 +83,19 @@ def main():
                     template = template.replace("{" + field + "ルビなし}", remove_ruby_tags(row[field]))
                 with open(os.path.join(dir_path, "index.html"), "w", encoding="utf-8") as result_f:
                     result_f.write(template)
+                    
+            with open(PAGES_DIV_TEMPLATE_FILE_PATH, "r", encoding="utf-8") as pages_div_template_f:
+                pages_div_template = pages_div_template_f.read()
+                for field in fields:
+                    pages_div_template = pages_div_template.replace("{" + field + "}", row[field])
+                    pages_div_template = pages_div_template.replace("{" + field + "ルビなし}", remove_ruby_tags(row[field]))
+                pages_divs += pages_div_template + "\n"
+                
             name_without_ruby_list.append(name_without_ruby)
 
         print(name_without_ruby_list)
         create_index_page(name_without_ruby_list)
+        create_all_page_file(pages_divs)
         
 if __name__ == "__main__":
     main()

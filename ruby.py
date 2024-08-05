@@ -21,7 +21,11 @@ RESULT_FILE_PATH = "data_with_ruby.csv"
 SELF_RUBY_DATA_FILE_PATH = "ruby_data.csv"
 
 
-DONT_NEED_RUBY_COLUMNS = ["カード画像"]
+DONT_NEED_RUBY_COLUMNS = [
+    "No.", "カード画像",
+    "効果解説1GPT", "効果解説2GPT", "どんな人？GPT", "コラム解説 GPT", "イラスト説明1のタイトル（旧）", "イラスト説明1（旧）", "イラスト説明2のタイトル（旧）", "イラスト説明2（旧）",
+    "イラスト説明1キャラ", "イラスト説明2キャラ", "どんな人？トップキャラ", "どんな人？内容キャラ", "効果解説トップキャラ", "効果解説1キャラ", "効果解説2キャラ",
+]
 
 # この値で join した状態でふりがなAPIに一斉送信する。
 COLUMN_SEPARATOR = ":"
@@ -273,7 +277,8 @@ def main():
     data = remove_columns_after_empty_array(data)
     
     dont_need_ruby_columns_num = list(map(lambda column: header.index(column), DONT_NEED_RUBY_COLUMNS))
-    # print(dont_need_ruby_columns_num)
+    dont_need_ruby_columns_num.sort()
+    print(dont_need_ruby_columns_num)
 
     # data から ルビがいらない列を削除
     ruby_rows = []
@@ -293,14 +298,16 @@ def main():
     
     ruby_result = [row.split(COLUMN_SEPARATOR) for row in ruby_result_str.split(ROW_SEPARATOR)]
     
-    # print(ruby_result)
-    
     
     result = data
-    for i in range(len(result)):
-        for j in range(len(result[i])):
-            if j not in dont_need_ruby_columns_num:
-                result[i][j] = ruby_result[i][j]
+    
+    need_ruby_columns_num = [i for i in range(len(header)) if i not in dont_need_ruby_columns_num]
+    
+    for i in range(len(ruby_result)):
+        for j in range(len(ruby_result[i])):
+            # if j not in dont_need_ruby_columns_num:
+                k = need_ruby_columns_num[j]
+                result[i][k] = ruby_result[i][j]
         
     # print(result)
 
