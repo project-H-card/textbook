@@ -81,7 +81,7 @@ p {
     writing-mode: vertical-rl;
     top: calc(60px * var(--rate));
     left: 0;
-    font-size: 6.4rem;
+    font-size: 4.8rem; /* 6.4rem */
     text-shadow: 0px 0px calc(6px * var(--rate)) black;
     font-family: 'Noto Sans JP';
 }
@@ -91,11 +91,11 @@ p {
 }
 
 .name ruby {
-    font-size: 6.4rem;
+    font-size: 4.8rem; /* 6.4rem */
 }
 
 .name rt {
-    font-size: 3.2rem;
+    font-size: 2.4rem;
 }
 
 .alias {
@@ -136,6 +136,10 @@ p {
     margin-right: calc(5px * var(--rate));
 }
 
+.aboutIllust h3 span {
+    font-size: 1.4rem;
+}
+
 .aboutIllust p {
     border-bottom: 1px solid white;
     border-left: 1px solid white;
@@ -145,11 +149,12 @@ p {
 
 #aboutIllust1 {
     top: calc(750% / 21);
-    right: 5%;
+    right: 2%;
 }
 
 #aboutIllust2 {
-    top: calc(1000% / 21);
+    /* top: calc(1000% / 21); */
+    bottom: 35%;
     left: 5%;
 }
 
@@ -280,7 +285,7 @@ p {
 .sectionTitle {
     background: white;
     border-radius: calc(5px * var(--rate));
-    font-size: 1.8rem;
+    font-size: 1.6rem; /* 1.8rem */
     font-weight: bold;
     padding: calc(5px * var(--rate));
     padding-top: calc(7.5px * var(--rate));
@@ -319,7 +324,7 @@ p {
 .aboutPersonContents {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: end;
     width: 105%;
 }
 
@@ -364,7 +369,7 @@ p {
 
 .columnArea {
     width: 46%;
-    transform: translateX(calc(10px * var(--rate))) translateY(calc(20px * var(--rate)));
+    transform: translateX(calc(10px * var(--rate)));
 }
 
 .columnHeader {
