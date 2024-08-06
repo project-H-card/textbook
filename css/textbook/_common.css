@@ -30,8 +30,7 @@ p {
 }
 
 :root {
-    --rate: 2;
-    font-size: calc(10px * var(--rate));
+    font-size: 10px;
 }
 
 .pages {
@@ -44,8 +43,8 @@ p {
 }
 
 .page {
-    width: calc(375px * var(--rate));
-    height: calc(575px * var(--rate)); /* 帯を除いた縦横比が 21:13.7 */
+    width: 375px;
+    height: 575px; /* 帯を除いた縦横比が 21:13.7 */
     position: relative;
     overflow: hidden;
 }
@@ -57,14 +56,15 @@ p {
 
 .mini {
     border-radius: 50%;
-    width: calc(30px * var(--rate));
-    height: calc(30px * var(--rate));
+    width: 30px;
+    height: 30px;
 }
+
 
 /* 左ページ */
 .leftPage {
     color: white;
-    text-shadow: 0px 0px calc(2px * var(--rate)) black, 0px 0px calc(2px * var(--rate)) black, 0px 0px calc(2px * var(--rate)) black;
+    text-shadow: 0px 0px 2px black, 0px 0px 2px black, 0px 0px 2px black;
 }
 
 .largeIllust {
@@ -79,10 +79,10 @@ p {
 .name {
     position: absolute;
     writing-mode: vertical-rl;
-    top: calc(60px * var(--rate));
+    top: 60px;
     left: 0;
     font-size: 6.4rem;
-    text-shadow: 0px 0px calc(6px * var(--rate)) black;
+    text-shadow: 0px 0px 6px black;
     font-family: 'Noto Sans JP';
 }
 
@@ -100,10 +100,10 @@ p {
 
 .alias {
     position: absolute;
-    top: calc(10px * var(--rate));
-    left: calc(10px * var(--rate));
+    top: 10px;
+    left: 10px;
     font-size: 2.4rem;
-    text-shadow: 0px 0px calc(6px * var(--rate)) black;
+    text-shadow: 0px 0px 6px black;
     font-family: 'Noto Sans JP';
 }
 
@@ -131,16 +131,16 @@ p {
 }
 
 .aboutIllust h3 .mini {
-    width: calc(24px * var(--rate));
-    height: calc(24px * var(--rate));
-    margin-right: calc(5px * var(--rate));
+    width: 24px;
+    height: 24px;
+    margin-right: 5px;
 }
 
 .aboutIllust p {
     border-bottom: 1px solid white;
     border-left: 1px solid white;
-    padding: calc(3px * var(--rate));
-    border-radius: calc(3px * var(--rate));
+    padding: 3px;
+    border-radius: 3px;
 }
 
 #aboutIllust1 {
@@ -153,18 +153,20 @@ p {
     left: 5%;
 }
 
+
+
 .cardArea {
     position: static;
 }
 
 .cardBGCircle {
-    width: calc(180px * var(--rate));
-    height: calc(180px * var(--rate));
+    width: 180px;
+    height: 180px;
     position: absolute;
-    bottom: calc(-30px * var(--rate));
-    left: calc(-30px * var(--rate));
+    bottom: -30px;
+    left: -30px;
     border-radius: 50%;
-    border: calc(5px * var(--rate)) solid white;
+    border: 5px solid white;
 }
 
 .cardBGCircle img {
@@ -174,11 +176,11 @@ p {
 }
 
 .card {
-    width: calc(63px * 2 * var(--rate));
-    height: calc(88px * 2 * var(--rate));
+    width: calc(63px * 2);
+    height: calc(88px * 2);
     position: absolute;
-    bottom: calc(10px * var(--rate));
-    left: calc(10px * var(--rate));
+    bottom: 10px;
+    left: 10px;
     transform: rotate(20deg);
 }
 
@@ -187,9 +189,11 @@ p {
     height: 100%;
 }
 
+
+
 .profile {
-    bottom: calc(20px * var(--rate));
-    left: calc(170px * var(--rate));
+    bottom: 20px;
+    left: 170px;
     position: absolute;
 }
 
@@ -198,7 +202,7 @@ p {
 }
 
 .profileRow {
-    margin: calc(4px * var(--rate)) 0;
+    margin: 4px 0;
 }
 
 .profileName {
@@ -208,29 +212,29 @@ p {
 
 .profileData {
     font-size: 1.2rem;
-    padding-left: calc(10px * var(--rate));
+    padding-left: 10px;
 }
 
 .tips {
     display: flex;
-    margin-top: calc(10px * var(--rate));
-    padding-right: calc(10px * var(--rate));
+    margin-top: 10px;
+    padding-right: 10px;
 }
 
 .tips img {
-    width: calc(30px * var(--rate));
-    height: calc(30px * var(--rate));
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
-    transform: translateX(calc(-10px * var(--rate)));
+    transform: translateX(-10px);
 }
 
 .tipsContent {
     color: black;
     background: white;
-    border-radius: calc(5px * var(--rate));
+    border-radius: 5px;
     font-size: 0.8rem;
     font-weight: bold;
-    padding: calc(3px * var(--rate));
+    padding: 3px;
     position: relative;
     text-shadow: none;
 }
@@ -239,13 +243,15 @@ p {
     content: '';
     position: absolute;
     top: 50%;
-    left: calc(-5px * var(--rate));
+    left: -5px;
     width: 0;
     height: 0;
-    border: calc(5px * var(--rate)) solid transparent;
+    border: 5px solid transparent;
     border-top-color: white;
     transform: translateY(-50%);
 }
+
+
 
 /* 右ページ */
 .rightPage {
@@ -265,50 +271,50 @@ p {
 }
 
 .sectionTitleArea img {
-    width: calc(30px * var(--rate));
-    height: calc(30px * var(--rate));
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
 }
 
 .titleLeftBar {
-    width: calc(6px * var(--rate));
-    height: calc(30px * var(--rate));
+    width: 6px;
+    height: 30px;
     background: linear-gradient(to bottom, #FFDE59, #FF914D);
-    margin-right: calc(5px * var(--rate));
+    margin-right: 5px;
 }
 
 .sectionTitle {
     background: white;
-    border-radius: calc(5px * var(--rate));
+    border-radius: 5px;
     font-size: 1.8rem;
     font-weight: bold;
-    padding: calc(5px * var(--rate));
-    padding-top: calc(7.5px * var(--rate));
-    padding-bottom: calc(2.5px * var(--rate));
+    padding: 5px;
+    padding-top: 7.5px;
+    padding-bottom: 2.5px;
     position: relative;
     text-shadow: none;
-    width: calc(250px * var(--rate));
-    margin-left: calc(10px * var(--rate));
+    width: 250px;
+    margin-left: 10px;
 }
 
 .sectionTitle::after {
     content: '';
     position: absolute;
     top: 50%;
-    left: calc(-5px * var(--rate));
+    left: -5px;
     width: 0;
     height: 0;
-    border: calc(5px * var(--rate)) solid transparent;
+    border: 5px solid transparent;
     border-top-color: white;
     transform: translateY(-50%);
 }
 
 .aboutPersonCircle {
-    width: calc(200px * var(--rate));
-    height: calc(200px * var(--rate));
+    width: 200px;
+    height: 200px;
     position: absolute;
-    top: calc(-60px * var(--rate));
-    right: calc(-60px * var(--rate));
+    top: -60px;
+    right: -60px;
     border-radius: 50%;
 }
 
@@ -327,40 +333,40 @@ p {
 }
 
 .aboutPersonLeft .mini {
-    width: calc(24px * var(--rate));
-    height: calc(24px * var(--rate));
+    width: 24px;
+    height: 24px;
 }
 
 #aboutPersonCharacter {
     font-family: "TsunagiGothic";
-    margin-left: calc(5px * var(--rate));
+    margin-left: 5px;
 }
 
 .aboutPersonExplain {
     width: 100%;
     font-size: 0.8rem;
-    padding: calc(10px * var(--rate));
-    border-radius: calc(4px * var(--rate));
+    padding: 10px;
+    border-radius: 4px;
     background: white;
-    margin-left: calc(5px * var(--rate));
-    margin-top: calc(5px * var(--rate));
+    margin-left: 5px;
+    margin-top: 5px;
 }
 
 .aboutPersonExplain::after {
     content: '';
     position: absolute;
     top: 10%;
-    left: calc(-5px * var(--rate));
+    left: -5px;
     width: 0;
     height: 0;
-    border: calc(5px * var(--rate)) solid transparent;
+    border: 5px solid transparent;
     border-top-color: white;
     transform: translateY(-50%);
 }
 
 .columnArea {
     width: 46%;
-    transform: translateX(calc(10px * var(--rate))) translateY(calc(20px * var(--rate)));
+    transform: translateX(10px) translateY(20px);
 }
 
 .columnHeader {
@@ -371,7 +377,7 @@ p {
 
 .columnTitle {
     background: white;
-    padding: calc(2px * var(--rate));
+    padding: 2px;
     font-size: 1.2rem;
 }
 
@@ -381,15 +387,15 @@ p {
 
 .columnContents {
     font-size: 0.8rem;
-    text-shadow: white 0px 0px calc(2px * var(--rate)), white 0px 0px calc(2px * var(--rate)), white 0px 0px calc(2px * var(--rate)), white 0px 0px calc(2px * var(--rate));
+    text-shadow: white 0px 0px 2px;
     font-weight: bold;
-    margin: calc(5px * var(--rate)) 0;
+    margin: 5px 0;
 }
 
 .aboutSkillArea {
-    padding: calc(10px * var(--rate)) 0;
-    border-top: calc(1px * var(--rate)) #545454 dotted;
-    border-bottom: calc(1px * var(--rate)) #545454 dotted;
+    padding: 10px 0;
+    border-top: 1px #545454 dotted;
+    border-bottom: 1px #545454 dotted;
 }
 
 .aboutSkillContents {
@@ -405,13 +411,13 @@ p {
 .skillTitle {
     display: flex;
     align-items: center;
-    margin: calc(10px * var(--rate)) 0;
+    margin: 10px 0;
 }
 
 .skillTitle .mini {
-    width: calc(24px * var(--rate));
-    height: calc(24px * var(--rate));
-    margin-right: calc(5px * var(--rate));
+    width: 24px;
+    height: 24px;
+    margin-right: 5px;
 }
 
 .skillTitle span {
@@ -420,23 +426,23 @@ p {
     font-size: 1.6rem;
     margin: 5px 0;
     width: fit-content;
-    padding: 0 calc(5px * var(--rate));
+    padding: 0 5px;
 }
-
 .skillTitle rt {
-    text-shadow: #EE7800 0px 0px calc(2px * var(--rate));
+    text-shadow: #EE7800 0px 0px 2px;
     font-size: 0.6rem;
 }
 
 .skillExplain {
     font-size: 1rem;
-    margin: calc(10px * var(--rate)) 0;
+    margin: 10px 0;
 }
 
 .skillImage {
-    width: calc(135px * var(--rate));
-    height: calc(135px * 3 / 5 * var(--rate));
+    width: 135px;
+    height: calc(135px * 3 / 5);
 }
+
 
 .finalContents {
     display: flex;
@@ -445,13 +451,13 @@ p {
 }
 
 .finalExplain {
-    width: calc(95% - 100px * var(--rate));
+    width: calc(95% - 100px);
     font-size: 0.8rem;
 }
 
 .finalIllust {
-    width: calc(100px * var(--rate));
-    height: calc(100px * 3 / 5 * var(--rate));
+    width: 100px;
+    height: calc(100px * 3 / 5);
 }
 
 .finalIllust img {
@@ -463,34 +469,34 @@ p {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: calc(10px * var(--rate));
+    margin-top: 10px;
 }
 
 .finalQuiz img {
-    width: calc(30px * var(--rate));
-    height: calc(30px * var(--rate));
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
 }
 
 .finalQuizContents {
     background: white;
-    border-radius: calc(2px * var(--rate));
+    border-radius: 2px;
     font-size: 0.9rem;
     font-weight: bold;
-    padding: calc(5px * var(--rate)) calc(3px * var(--rate));
+    padding: 5px 3px;
     position: relative;
     text-shadow: none;
-    width: calc(100% - 40px * var(--rate));
+    width: calc(100% - 40px);
 }
 
 .finalQuizContents::after {
     content: '';
     position: absolute;
     top: 50%;
-    left: calc(-5px * var(--rate));
+    left: -5px;
     width: 0;
     height: 0;
-    border: calc(5px * var(--rate)) solid transparent;
+    border: 5px solid transparent;
     border-top-color: white;
     transform: translateY(-50%);
 }
