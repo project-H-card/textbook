@@ -45,7 +45,7 @@ document.querySelector("#downloadButton").addEventListener("click", async (e) =>
     let tasks = [];
     for(let i in pageElements) {
         const elem = pageElements[i];
-        const filename = elem.dataset?.filename || `card${String(i).padStart(3, '0')}.png`;
+        const filename = elem.dataset?.name || `page${String(i).padStart(3, '0')}.png`;
         // const filename = elem.dataset?.filename ? `card${String(i).padStart(3, '0')}_${elem.dataset?.filename}` : `card${String(i).padStart(3, '0')}.png`;
         console.log(filename);
         tasks.push(trySaveIMG(elem, filename));

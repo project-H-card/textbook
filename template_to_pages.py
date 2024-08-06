@@ -79,16 +79,18 @@ def main():
             with open(TEMPLATE_FILE_PATH, "r", encoding="utf-8") as template_f:
                 template = template_f.read()
                 for field in fields:
-                    template = template.replace("{" + field + "}", row[field])
-                    template = template.replace("{" + field + "ルビなし}", remove_ruby_tags(row[field]))
+                    # field = field.replace("https://highsto.net/", "../../")
+                    template = template.replace("{" + field + "}", row[field].replace("https://highsto.net/", "../../"))
+                    template = template.replace("{" + field + "ルビなし}", remove_ruby_tags(row[field].replace("https://highsto.net/", "../../")))
                 with open(os.path.join(dir_path, "index.html"), "w", encoding="utf-8") as result_f:
                     result_f.write(template)
                     
             with open(PAGES_DIV_TEMPLATE_FILE_PATH, "r", encoding="utf-8") as pages_div_template_f:
                 pages_div_template = pages_div_template_f.read()
                 for field in fields:
-                    pages_div_template = pages_div_template.replace("{" + field + "}", row[field])
-                    pages_div_template = pages_div_template.replace("{" + field + "ルビなし}", remove_ruby_tags(row[field]))
+                    # field = field.replace("https://highsto.net/", "../../")
+                    pages_div_template = pages_div_template.replace("{" + field + "}", row[field].replace("https://highsto.net/", "../../"))
+                    pages_div_template = pages_div_template.replace("{" + field + "ルビなし}", remove_ruby_tags(row[field].replace("https://highsto.net/", "../../")))
                 pages_divs += pages_div_template + "\n"
                 
             name_without_ruby_list.append(name_without_ruby)
