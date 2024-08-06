@@ -255,7 +255,7 @@ p {
 
 .rightPage > div {
     width: 80%;
-    margin: 10px auto;
+    margin: calc(5px * var(--rate)) auto;
 }
 
 .sectionTitleArea {
@@ -301,6 +301,10 @@ p {
     border: calc(5px * var(--rate)) solid transparent;
     border-top-color: white;
     transform: translateY(-50%);
+}
+
+.aboutPersonArea {
+    height: calc(184px * var(--rate));
 }
 
 .aboutPersonCircle {
@@ -377,6 +381,7 @@ p {
 
 .onRightTop {
     font-size: 0.8rem;
+    text-shadow: white 0px 0px calc(2px * var(--rate)), white 0px 0px calc(2px * var(--rate));
 }
 
 .columnContents {
@@ -387,6 +392,7 @@ p {
 }
 
 .aboutSkillArea {
+    height: calc(334px * var(--rate));
     padding: calc(10px * var(--rate)) 0;
     border-top: calc(1px * var(--rate)) #545454 dotted;
     border-bottom: calc(1px * var(--rate)) #545454 dotted;
@@ -400,12 +406,14 @@ p {
 
 .aboutSkillContent {
     width: 48%;
+    height: 100%;
 }
 
 .skillTitle {
     display: flex;
     align-items: center;
     margin: calc(10px * var(--rate)) 0;
+    height: calc(27px * var(--rate));
 }
 
 .skillTitle .mini {
@@ -423,6 +431,14 @@ p {
     padding: 0 calc(5px * var(--rate));
 }
 
+.skillTitle span.long {
+    font-size: 1.2rem;
+}
+
+.skillTitle span.veryLong {
+    font-size: 1rem;
+}
+
 .skillTitle rt {
     text-shadow: #EE7800 0px 0px calc(2px * var(--rate));
     font-size: 0.6rem;
@@ -431,11 +447,19 @@ p {
 .skillExplain {
     font-size: 1rem;
     margin: calc(10px * var(--rate)) 0;
+    height: calc(141px * var(--rate));
 }
 
 .skillImage {
     width: calc(135px * var(--rate));
     height: calc(135px * 3 / 5 * var(--rate));
+}
+
+.finalArea {
+    height: calc(36px * var(--rate));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .finalContents {
@@ -463,7 +487,7 @@ p {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: calc(10px * var(--rate));
+    /* margin-top: calc(5px * var(--rate)); */
 }
 
 .finalQuiz img {
