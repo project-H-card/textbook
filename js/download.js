@@ -41,6 +41,9 @@ document.querySelector("#downloadButton").addEventListener("click", async (e) =>
     const confirmResult = confirm(`${elemNum}枚の画像をダウンロードします。`);
     if(!confirmResult) return;
 
+    document.querySelectorAll(".innerFrame").forEach((e) => e.style.border = "none");
+    document.querySelectorAll(".mainFrame").forEach((e) => e.style.border = "none");
+
     // if(rate !== 30) {
     //     const rateConfirmResult = confirm(`画質は${rate}です。最終確認と入稿時は "30" を推奨していますがよろしいですか？`);
     //     if(!rateConfirmResult) return;
@@ -73,5 +76,7 @@ document.querySelector("#downloadButton").addEventListener("click", async (e) =>
         alert(`${elemNum}枚の画像を全てダウンロードしました。`);
         downloadStatus.classList.remove("active");
         // document.querySelectorAll(".cardContents").forEach((e) => e.style.border = "white solid 1px");
+        document.querySelectorAll(".innerFrame").forEach((e) => e.style.border = "white solid 1px");
+        document.querySelectorAll(".mainFrame").forEach((e) => e.style.border = "white solid 1px");
     }, 3000);
 })
