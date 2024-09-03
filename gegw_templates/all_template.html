@@ -12,11 +12,11 @@
         <div class="pageArea">
             {page_divs}
         </div>
-        <div class="controls">
-            <input type="button" value="ダウンロード" id="downloadButton">
-            <div id="downloadStatus"><span>ダウンロード開始</span></div>
-        </div>
     </main>
+    <div class="controls">
+        <input type="button" value="ダウンロード" id="downloadButton">
+        <div id="downloadStatus"><span>ダウンロード開始</span></div>
+    </div>
 
 </body>
 <script src="https://cdn.jsdelivr.net/npm/dom-to-image@2.6.0/dist/dom-to-image.min.js"></script>
@@ -79,6 +79,15 @@
         }
 
         updateRadarChart();
+    });
+
+    // 東軍だったらsidebarのclassにeastを追加
+    const sidebars = document.querySelectorAll(".sidebar");
+    sidebars.forEach(sidebar => {
+        const alt = sidebar.querySelector("img").alt;
+        if (alt.includes("東軍")) {
+            sidebar.classList.add("east");
+        }
     });
 
 </script>

@@ -40,15 +40,72 @@ p {
     justify-content: center;
     margin: 0 auto;
     flex-wrap: wrap;
+    position: relative;
+    width: fit-content;
+    height: fit-content;
     /* align-items: center;
     min-height: 100vh; */
 }
 
+.sidebar {
+    width: calc(375px * 2.4 / 18.9 * var(--rate));
+    height: calc(601px * var(--rate));
+    background-color: #2338e6;
+    display: flex;
+}
+.sidebar.east {
+    background-color: #f85c84;
+}
+.sidebarMargin {
+    width: calc(375px * 0.6 / 18.9 * var(--rate));
+    height: calc(601px * var(--rate));
+}
+.sidebarMain {
+    width: calc(375px * 1.8 / 18.9 * var(--rate));
+    height: calc(601px * var(--rate));
+}
+.sidebarMain img {
+    width: 90%;
+    height: auto;
+    margin: auto;
+    display: block;
+    margin-top: calc(601px / 2 * var(--rate));
+    transform: translateY(-50%);
+}
+
 .page {
     width: calc(375px * var(--rate));
-    height: calc(575px * var(--rate)); /* 帯を除いた縦横比が 21:13.7 */
+    height: calc(601px * var(--rate));
+    /* 帯を除いた縦横比が塗りたし拡張後で 30.3:18.9 */
+
+    /* height: calc(575px * var(--rate));  */
+    /* 帯を除いた縦横比が 21:13.7 */
+
     position: relative;
     overflow: hidden;
+}
+
+.innerFrame, .mainFrame {
+    position: absolute;
+    border: 1px solid white;
+    z-index: 1000;
+    pointer-events: none;
+}
+
+/* 文字をここまでに収めたいフレーム（端っこからそれぞれ6mm→→合わせて1.2cm引いた） */
+.innerFrame {
+    width: calc(375px * 41.4 / 18.9 * var(--rate));
+    height: calc(601px * 29.1 / 30.3 * var(--rate));
+    top: calc(601px * 0.6 / 30.3 * var(--rate));
+    left: calc(375px * 0.6 / 18.9 * var(--rate));
+}
+
+/* 基本的なA3のページサイズ（端っこからそれぞれ3mm→→合わせて6mm引いた） */
+.mainFrame {
+    width: calc(375px * 42 / 18.9 * var(--rate));
+    height: calc(601px * 29.7 / 30.3 * var(--rate));
+    top: calc(601px * 0.3 / 30.3 * var(--rate));
+    left: calc(375px * 0.3 / 18.9 * var(--rate));
 }
 
 .page * {
@@ -101,7 +158,7 @@ p {
 
 .alias {
     position: absolute;
-    top: calc(10px * var(--rate));
+    top: calc(14px * var(--rate));
     left: calc(10px * var(--rate));
     font-size: 2.4rem;
     text-shadow: 0px 0px calc(6px * var(--rate)) black;
@@ -264,11 +321,24 @@ p {
     margin: calc(5px * var(--rate)) auto;
 }
 
+.rightPage .deckTitle {
+    height: calc(20px * var(--rate));
+    margin-bottom: 0;
+    margin-top: calc(15px * var(--rate));
+}
+.deckTitle img {
+    width: auto;
+    height: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: 0;
+}
+
 .rightPage .rightMainArea {
     margin: 0;
     width: 100%;
     display: flex;
-    height: 90%;
+    height: 85%;
 }
 
 .rightHalfArea {

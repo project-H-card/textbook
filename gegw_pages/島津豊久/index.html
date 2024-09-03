@@ -10,8 +10,18 @@
 
 <body>
     <main>
-        <div class="pages">
-            <div class="page leftPage">
+        <div class="pages" data-name="島津豊久.png">
+            <div class="innerFrame"></div>
+            <div class="mainFrame"></div>
+
+            <div class="sidebar">
+                <div class="sidebarMargin"></div>
+                <div class="sidebarMain">
+                    <img src="../../assets/images/textbook/sidebar/西軍.webp" alt="西軍">
+                </div>
+            </div>
+
+            <div class="page leftPage" data-name="left_島津豊久.png">
                 <img src="../../assets/images/textbook/large_illust/島津豊久.webp" alt="島津豊久" class="largeIllust">
                 <h1 class="name"><ruby>島津豊久<rt>しまづとよひさ</rt></ruby></h1>
                 <h2 class="alias"><ruby>無双<rt>むそう</rt></ruby>の<ruby>美童<rt>びどう</rt></ruby></h2>
@@ -63,7 +73,10 @@
             </div>
 
 
-            <div class="page rightPage">
+            <div class="page rightPage" data-name="right_島津豊久.png">
+                <div class="deckTitle">
+                    <img src="../../assets/images/textbook/gegw/deck_title.webp" alt="">
+                </div>
                 <div class="rightMainArea">
                     <div class="rightHalfArea">
                         <section class="rightPageSection">
@@ -187,68 +200,83 @@
                     </div>
                 </div>
             </div>
+            <div class="sidebar">
+                <div class="sidebarMain">
+                    <img src="../../assets/images/textbook/sidebar/西軍.webp" alt="西軍">
+                </div>
+                <div class="sidebarMargin"></div>
+            </div>
         </div>
-        <script>
-            const images = document.querySelectorAll('img');
-            images.forEach(img => {
-                img.addEventListener('error', () => {
-                    console.log(img.src);
-                    img.src = '../../assets/images/textbook/common/errorGreen.webp';
-                });
-
-                // テンプレートでui を確かめるためにエラーを出力
+    </main>
+    <script>
+        const images = document.querySelectorAll('img');
+        images.forEach(img => {
+            img.addEventListener('error', () => {
+                console.log(img.src);
                 img.src = '../../assets/images/textbook/common/errorGreen.webp';
             });
 
-            
-            // レーダーチャートの描画
-            const centerX = 100;
-            const centerY = 100;
-            const maxRadius = 100;
-            const maxValue = 10;
+            // テンプレートでui を確かめるためにエラーを出力
+            img.src = '../../assets/images/textbook/common/errorGreen.webp';
+        });
 
-            const pages = document.querySelectorAll('.pages');
-            pages.forEach(page => {
-                const parameters = [
-                    parseInt(page.querySelector('.param1-value').textContent) || 2,
-                    parseInt(page.querySelector('.param2-value').textContent) || 4 ,
-                    parseInt(page.querySelector('.param3-value').textContent) || 6,
-                    parseInt(page.querySelector('.param4-value').textContent) || 8,
-                    parseInt(page.querySelector('.param5-value').textContent) || 10,
-                ];
+        
+        // レーダーチャートの描画
+        const centerX = 100;
+        const centerY = 100;
+        const maxRadius = 100;
+        const maxValue = 10;
 
-                function calculatePoint(angle, value) {
-                    const radians = (angle * Math.PI) / 180;
-                    const radius = (value / maxValue) * maxRadius;
-                    const x = centerX + radius * Math.cos(radians);
-                    const y = centerY - radius * Math.sin(radians);
-                    return [x, y];
-                }
+        const pages = document.querySelectorAll('.pages');
+        pages.forEach(page => {
+            const parameters = [
+                parseInt(page.querySelector('.param1-value').textContent) || 2,
+                parseInt(page.querySelector('.param2-value').textContent) || 4 ,
+                parseInt(page.querySelector('.param3-value').textContent) || 6,
+                parseInt(page.querySelector('.param4-value').textContent) || 8,
+                parseInt(page.querySelector('.param5-value').textContent) || 10,
+            ];
 
-                function updateRadarChart() {
-                    const angles = [0, 72, 144, 216, 288].map(angle => 180 - (angle + 90));
-                    let pathData = "";
-                    let circles = "";
+            function calculatePoint(angle, value) {
+                const radians = (angle * Math.PI) / 180;
+                const radius = (value / maxValue) * maxRadius;
+                const x = centerX + radius * Math.cos(radians);
+                const y = centerY - radius * Math.sin(radians);
+                return [x, y];
+            }
 
-                    angles.forEach((angle, index) => {
-                        const [x, y] = calculatePoint(angle, parameters[index]);
-                        pathData += `${index === 0 ? 'M' : 'L'} ${x.toFixed(1)} ${y.toFixed(1)} `;
-                        circles += `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="3"/>`;
-                    });
+            function updateRadarChart() {
+                const angles = [0, 72, 144, 216, 288].map(angle => 180 - (angle + 90));
+                let pathData = "";
+                let circles = "";
 
-                    // const [x, y] = calculatePoint(0, parameters[0]);
-                    // pathData += `L ${x.toFixed(1)} ${y.toFixed(1)}`;
-                    pathData += 'Z';
+                angles.forEach((angle, index) => {
+                    const [x, y] = calculatePoint(angle, parameters[index]);
+                    pathData += `${index === 0 ? 'M' : 'L'} ${x.toFixed(1)} ${y.toFixed(1)} `;
+                    circles += `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="3"/>`;
+                });
 
-                    page.querySelector('.data-path').setAttribute('d', pathData);
-                    page.querySelector('.data-points').innerHTML = circles;
-                }
+                // const [x, y] = calculatePoint(0, parameters[0]);
+                // pathData += `L ${x.toFixed(1)} ${y.toFixed(1)}`;
+                pathData += 'Z';
 
-                updateRadarChart();
-            });
+                page.querySelector('.data-path').setAttribute('d', pathData);
+                page.querySelector('.data-points').innerHTML = circles;
+            }
 
-        </script>
-    </main>
+            updateRadarChart();
+        });
+
+        // 東軍だったらsidebarのclassにeastを追加
+        const sidebars = document.querySelectorAll(".sidebar");
+        sidebars.forEach(sidebar => {
+            const alt = sidebar.querySelector("img").alt;
+            if (alt.includes("東軍")) {
+                sidebar.classList.add("east");
+            }
+        });
+
+    </script>
 </body>
 
 </html>

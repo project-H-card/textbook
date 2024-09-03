@@ -1,3 +1,4 @@
+// 東西決戦のためのコードだと思われるが、意図不明
 [...document.querySelectorAll(".skillExplain")].forEach((e, index) => {
     // console.log(e.textContent);
     if(e.textContent === "") {
@@ -24,13 +25,20 @@ async function trySaveIMG(elem, path) {
 }
 
 document.querySelector("#downloadButton").addEventListener("click", async (e) => {
-    const pageElements = [...document.querySelectorAll(".page")];
-    const pageNum = pageElements.length;
+    const shouldSeparate = confirm("カードを左右ページで分割してダウンロードしますか？");
+    
+    let pageElements = [];
+    if(shouldSeparate) {
+        pageElements = [...document.querySelectorAll(".page")];
+    } else {
+        pageElements = [...document.querySelectorAll(".pages")];
+    }
+    const elemNum = pageElements.length;
 
     // const loadErrorImageNames = loadErrorImages.map((path) => decodeURI(path.split("/").pop()));
 
     // const confirmResult = confirm(`${pageNum}枚の画像をダウンロードします。\n${loadErrorImageNames.length > 0 ? `以下の画像は読み込みに失敗しているため、デフォルト画像で代用します。\n${loadErrorImageNames.join("\n")}` : ""}`);
-    const confirmResult = confirm(`${pageNum}枚の画像をダウンロードします。`);
+    const confirmResult = confirm(`${elemNum}枚の画像をダウンロードします。`);
     if(!confirmResult) return;
 
     // if(rate !== 30) {
@@ -52,17 +60,17 @@ document.querySelector("#downloadButton").addEventListener("click", async (e) =>
         if(tasks.length >= batchSize) {
             await Promise.all(tasks);
             tasks = [];
-            downloadStatus.innerHTML = `<span>${+i+1}/${pageNum}枚完了</span>`
+            downloadStatus.innerHTML = `<span>${+i+1}/${elemNum}枚完了</span>`
         }
     }
     if(tasks.length > 0) {
         await Promise.all(tasks);
     }
 
-    downloadStatus.innerHTML = `<span>${pageNum}枚全て完了</span>`;
+    downloadStatus.innerHTML = `<span>${elemNum}枚全て完了</span>`;
 
     setTimeout(() => {
-        alert(`${pageNum}枚の画像を全てダウンロードしました。`);
+        alert(`${elemNum}枚の画像を全てダウンロードしました。`);
         downloadStatus.classList.remove("active");
         // document.querySelectorAll(".cardContents").forEach((e) => e.style.border = "white solid 1px");
     }, 3000);
