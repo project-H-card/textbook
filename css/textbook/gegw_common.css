@@ -220,34 +220,19 @@ p {
     position: static;
 }
 
-.cardBGCircle {
-    width: calc(180px * var(--rate));
-    height: calc(180px * var(--rate));
-    position: absolute;
-    bottom: calc(-30px * var(--rate));
-    left: calc(-30px * var(--rate));
-    border-radius: 50%;
-    border: calc(5px * var(--rate)) solid white;
-}
-
-.cardBGCircle img {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-}
-
 .card {
     width: calc(63px * 2 * var(--rate));
     height: calc(88px * 2 * var(--rate));
     position: absolute;
-    bottom: calc(10px * var(--rate));
+    bottom: calc(20px * var(--rate));
     left: calc(10px * var(--rate));
-    transform: rotate(20deg);
+    transform: rotate(10deg);
 }
 
 .card img {
     width: 100%;
     height: 100%;
+    border-radius: calc(5px * var(--rate));
 }
 
 .profile {
