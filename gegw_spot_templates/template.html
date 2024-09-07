@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{名前ルビなし} | ハイスト人物図鑑</title>
+    <link rel="stylesheet" href="../../css/textbook/gegw_common.css">
+    <link rel="stylesheet" href="../../css/textbook/gegw_spot.css">
+</head>
+
+<body>
+    <main>
+        <div class="pages" data-name="{名前ルビなし}.png">
+            <div class="innerFrame"></div>
+            <div class="mainFrame"></div>
+
+            <div class="sidebar">
+                <div class="sidebarMargin"></div>
+                <div class="sidebarMain">
+                    <img src="../../assets/images/textbook/sidebar/西軍.webp" alt="西軍">
+                </div>
+            </div>
+
+            <div class="page leftPage">
+                <div class="topBlack">
+                    <h2>
+                        <span class="small">岐阜の名所紹介</span>
+                        <span class="big">不破関</span>
+                    </h2>
+                </div>
+                <div class="middleImage">
+                    <img class="middleImageMain" src="" alt="">
+                    <img class="middleImageMini left" src="" alt="">
+                </div>
+                <div class="pageMain">
+                    <div class="mainLeft">
+                        <img class="mainLeftImage" src="" alt="">
+                        <div class="mainCharacter">
+                            <span class="small">天下への道 岐阜</span>
+                            <span class="big">シュン</span>
+                        </div>
+                    </div>
+                    <div class="mainRight">
+                        <h2 class="sectionTitle">不破関</h2>
+                        <p>岐阜県の西側にある関所は不破関というんだぜ。ここは関ヶ原の頃にはもう関所として使われていなかったんだけど、飛鳥時代や奈良時代の頃は鈴鹿関、愛発関と並んで大切な関所だっていわれてたんだ。 近江国と美濃国を分けていたこの関所は、岐阜県から東の地域から物や人が入ったり出ていったりするのを監視していたんだ。 <br>
+                            <br>
+                            たとえば天智天皇の弟、大海人皇子と天智天皇の息子の大友皇子が戦った壬申の乱では、大海人皇子がこの不破関を抑えて、大友皇子側が自由に通行できないようにすることで、連携を取れなくしたことが勝利の理由の一つだって言われているんだぜ。</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="page rightPage">
+                <div class="deckTitle">
+                    <img src="../../assets/images/textbook/gegw/deck_title.webp" alt="">
+                </div>
+                <div class="topBlack">
+                    <h2>
+                        <span class="small">岐阜の名所紹介</span>
+                        <span class="big">不破関</span>
+                    </h2>
+                </div>
+                <div class="middleImage">
+                    <img class="middleImageMain" src="" alt="">
+                    <img class="middleImageMini right" src="" alt="">
+                </div>
+                <div class="pageMain">
+                    <div class="mainLeft">
+                        <img class="mainLeftImage" src="" alt="">
+                        <div class="mainCharacter">
+                            <span class="small">天下への道 岐阜</span>
+                            <span class="big">シュン</span>
+                        </div>
+                    </div>
+                    <div class="mainRight">
+                        <h2 class="sectionTitle">不破関</h2>
+                        <p>岐阜県の西側にある関所は不破関というんだぜ。ここは関ヶ原の頃にはもう関所として使われていなかったんだけど、飛鳥時代や奈良時代の頃は鈴鹿関、愛発関と並んで大切な関所だっていわれてたんだ。 近江国と美濃国を分けていたこの関所は、岐阜県から東の地域から物や人が入ったり出ていったりするのを監視していたんだ。 <br>
+                            <br>
+                            たとえば天智天皇の弟、大海人皇子と天智天皇の息子の大友皇子が戦った壬申の乱では、大海人皇子がこの不破関を抑えて、大友皇子側が自由に通行できないようにすることで、連携を取れなくしたことが勝利の理由の一つだって言われているんだぜ。</p>
+                    </div>
+                </div>
+
+                
+            </div>
+            <div class="sidebar">
+                <div class="sidebarMain">
+                    <img src="../../assets/images/textbook/sidebar/東軍.webp" alt="東軍">
+                </div>
+                <div class="sidebarMargin"></div>
+            </div>
+        </div>
+    </main>
+    <script>
+        const images = document.querySelectorAll('img');
+        images.forEach(img => {
+            img.addEventListener('error', () => {
+                console.log(img.src);
+                img.src = '../../assets/images/textbook/common/errorGreen.webp';
+            });
+
+            // テンプレートでui を確かめるためにエラーを出力
+            img.src = '../../assets/images/textbook/common/errorGreen.webp';
+        });
+
+        
+
+        // 東軍だったらsidebarのclassにeastを追加
+        const sidebars = document.querySelectorAll(".sidebar");
+        sidebars.forEach(sidebar => {
+            const alt = sidebar.querySelector("img").alt;
+            if (alt.includes("東軍")) {
+                sidebar.classList.add("east");
+            }
+        });
+
+    </script>
+</body>
+
+</html>

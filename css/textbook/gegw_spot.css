@@ -1,0 +1,127 @@
+.leftPage {
+    background: url("../../assets/images/textbook/common/rightBG.webp")
+}
+
+.topBlack {
+    background: black;
+    color: white;
+    height: 14.5%;
+    width: 100%;
+    padding-top: 8%;
+}
+
+.topBlack h2 {
+    margin-left: 5%;
+}
+.topBlack h2 .small {
+    font-size: 2rem;
+    margin-right: 5%;
+    font-family: 'Noto Sans JP';
+}
+.topBlack h2 .big {
+    font-size: 4rem;
+    font-family: 'Noto Sans JP';
+}
+
+.middleImage {
+    position: relative;
+    height: 41.6%;
+}
+
+.middleImageMain {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.middleImageMini {
+    position: absolute;
+    width: 30%;
+    height: auto;
+    bottom: 0;
+    display: block;
+}
+
+.middleImageMini.left {
+    left: 0;
+}
+
+.middleImageMini.right {
+    right: 0;
+}
+
+.pageMain {
+    height: 43.9%;
+    display: flex;
+}
+
+.mainLeft {
+    width: 40%;
+    height: 100%;
+    position: relative;
+}
+.mainLeftImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.mainCharacter {
+    position: absolute;
+    width: 80%;
+    height: 20%;
+    display: block;
+    right: 0;
+    bottom: 10%;
+    background: black;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.mainCharacter .mini {
+    font-size: 1rem;
+    font-family: 'Noto Sans JP';
+}
+
+.mainCharacter .big {
+    font-size: 2rem;
+    font-family: 'Noto Sans JP';
+}
+
+.mainRight {
+    width: 60%;
+    height: 100%;
+    text-shadow: none;
+    color: black;
+    padding: 0 5%;
+}
+
+.mainRight .sectionTitle {
+    width: 90%;
+}
+
+.mainRight p {
+    line-height: 200%;
+    font-size: 0.8rem;
+}
+
+
+
+
+.deckTitle {
+    position: absolute;
+    top: 0;
+    right: calc(var(--rate) * 5px);
+    width: auto;
+    height: calc(var(--rate) * 10px);
+    z-index: 100;
+}
+
+.rightPage > div {
+    width: 100%;
+    margin: 0 auto;
+}

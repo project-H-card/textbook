@@ -247,11 +247,28 @@ p {
 
 .profileRow {
     margin: calc(4px * var(--rate)) 0;
+    border-radius: calc(1px * var(--rate));
+    border: #737373;
+    background: rgba(0, 0, 0, 0.7);
 }
 
 .profileName {
     font-size: 1.2rem;
     font-weight: bold;
+    color: #ffde59;
+    width: calc(86px * var(--rate));
+    display: inline-block;
+    margin-left: calc(5px * var(--rate));
+}
+.profileName > span {
+    font-size: 0.3em;
+    display: inline-flex;
+    flex-direction: column;
+    transform: translateY(-40%);
+}
+
+.profileName span span {
+
 }
 
 .profileData {
@@ -349,6 +366,7 @@ p {
     aspect-ratio: 672 / 116;
 
     font-size: 1.2rem;
+    font-family: 'ZenMaruGothic';
     padding-left: calc(var(--rate) * 10px);
     margin: calc(var(--rate) * 5px) 0;
 }
@@ -435,25 +453,99 @@ p {
     margin: 0;
 }
 
+.radar-chart-3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    /* width: 230px;
+    height: 230px; */
+    width: calc(var(--rate) * 100px);
+    height: calc(var(--rate) * 100px);
+    margin: 0 auto;
+    padding: 35px;
+    box-sizing: content-box;
+}
+
+.radar-chart-3 svg {
+    width: 100%;
+    height: 100%;
+}
+
+.radar-chart-3 dl {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.radar-chart-3 dl > div {
+    position: absolute;
+    color: #777;
+    font-size: .6em;
+    text-align: center;
+}
+
+.radar-chart-3 dl > div:nth-child(1) {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.radar-chart-3 dl > div:nth-child(2) {
+    top: 24%;
+    right: 10%;
+    transform: translateX(50%);
+}
+
+.radar-chart-3 dl > div:nth-child(3) {
+    bottom: 24%;
+    right: 10%;
+    transform: translateX(50%);
+}
+
+.radar-chart-3 dl > div:nth-child(4) {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.radar-chart-3 dl > div:nth-child(5) {
+    bottom: 24%;
+    left: 10%;
+    transform: translateX(-50%);
+}
+
+.radar-chart-3 dl > div:nth-child(6) {
+    top: 24%;
+    left: 10%;
+    transform: translateX(-50%);
+}
+
+.radar-chart-3 dd {
+    margin: 0;
+}
+
+
 
 
 
 .emblemArea {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 }
 
-.emblemExplain {
+/* .emblemExplain {
     width: 60%;
     font-size: 0.8rem;
-}
+} */
 
 .emblem {
     width: 40%;
 }
 .emblem p {
     font-size: 0.8rem;
+    text-align: center;
 }
 .emblem img {
     width: 100%;

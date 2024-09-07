@@ -39,17 +39,16 @@
     const centerX = 100;
     const centerY = 100;
     const maxRadius = 100;
-    const maxValue = 5;
+    const maxValue = 10;
 
     const pages = document.querySelectorAll('.pages');
     pages.forEach(page => {
         const parameters = [
-            parseInt(page.querySelector('.param1-value').textContent) || 1,
-            parseInt(page.querySelector('.param2-value').textContent) || 2 ,
-            parseInt(page.querySelector('.param3-value').textContent) || 3,
-            parseInt(page.querySelector('.param4-value').textContent) || 4,
-            parseInt(page.querySelector('.param5-value').textContent) || 5,
-            parseInt(page.querySelector('.param6-value').textContent) || 5,
+            parseInt(page.querySelector('.param1-value').textContent) || 2,
+            parseInt(page.querySelector('.param2-value').textContent) || 4 ,
+            parseInt(page.querySelector('.param3-value').textContent) || 6,
+            parseInt(page.querySelector('.param4-value').textContent) || 8,
+            parseInt(page.querySelector('.param5-value').textContent) || 10,
         ];
 
         function calculatePoint(angle, value) {
@@ -61,7 +60,7 @@
         }
 
         function updateRadarChart() {
-            const angles = [0, 60, 120, 180, 240, 300].map(angle => 180 - (angle + 90));
+            const angles = [0, 72, 144, 216, 288].map(angle => 180 - (angle + 90));
             let pathData = "";
             let circles = "";
 
