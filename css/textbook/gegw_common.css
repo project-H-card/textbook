@@ -540,8 +540,26 @@ p {
     transform: translateX(-50%);
 }
 
+.radar-chart-3 dt {
+    margin: 0;
+    font-size: 1.1em;
+    font-weight: bold;
+}
 .radar-chart-3 dd {
     margin: 0;
+    font-size: 1.6em;
+    font-weight: bold;
+    transform: translateY(-0.2em);
+}
+.radar-chart-3 dd.max-value {
+    font-size: 1.8em;
+    color: #004aad;
+    /* --text-shadow-color: #ff3131; */
+    /* --text-shadow-color: #004aad; */
+    --text-shadow-color: #004bad77;
+    text-shadow: 0 0 calc(var(--rate) * 1px) var(--text-shadow-color), 0 0 calc(var(--rate) * 1px) var(--text-shadow-color);
+    /* text-shadow: 0 0 calc(var(--rate) * 1px) white, 0 0 calc(var(--rate) * 1px) white, 0 0 calc(var(--rate) * 1px) white, 0 0 calc(var(--rate) * 1px) white, 0 0 calc(var(--rate) * 1px) white, 0 0 calc(var(--rate) * 1px) white, 0 0 calc(var(--rate) * 1px) white; */
+    /* text-shadow: 0 0 calc(var(--rate) * 1px) red, 0 0 calc(var(--rate) * 1px) red, 0 0 calc(var(--rate) * 1px) red, 0 0 calc(var(--rate) * 1px) red, 0 0 calc(var(--rate) * 1px) red, 0 0 calc(var(--rate) * 1px) red, 0 0 calc(var(--rate) * 1px) red */
 }
 
 

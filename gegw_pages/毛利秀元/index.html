@@ -154,7 +154,7 @@
                         <section class="rightPageSection">
                             <h2 class="sectionTitle"><ruby>毛利秀元<rt>もうりひでもと</rt></ruby>のデータ</h2>
                             <!-- https://pote-chil.com/css-stock/ja/radar-chart -->
-                            <div class="raderChart">
+                            <div class="raderChart" data-name="毛利秀元.png">
                                 <!-- <div class="radar-chart-2"> -->
                                 <div class="radar-chart-3">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 200 200">
@@ -278,29 +278,38 @@
                 console.log(img.src);
                 img.src = '../../assets/images/textbook/common/errorGreen.webp';
             });
-
+    
             // テンプレートでui を確かめるためにエラーを出力
-            img.src = '../../assets/images/textbook/common/errorGreen.webp';
+            // img.src = '../../assets/images/textbook/common/errorGreen.webp';
         });
-
+    
         
         // レーダーチャートの描画
         const centerX = 100;
         const centerY = 100;
         const maxRadius = 100;
         const maxValue = 5;
-
+    
         const pages = document.querySelectorAll('.pages');
         pages.forEach(page => {
-            const parameters = [
-                parseInt(page.querySelector('.param1-value').textContent) || 1,
-                parseInt(page.querySelector('.param2-value').textContent) || 2 ,
-                parseInt(page.querySelector('.param3-value').textContent) || 3,
-                parseInt(page.querySelector('.param4-value').textContent) || 4,
-                parseInt(page.querySelector('.param5-value').textContent) || 5,
-                parseInt(page.querySelector('.param6-value').textContent) || 5,
+            const parametersElements = [
+                page.querySelector('.param1-value'),
+                page.querySelector('.param2-value'),
+                page.querySelector('.param3-value'),
+                page.querySelector('.param4-value'),
+                page.querySelector('.param5-value'),
+                page.querySelector('.param6-value'),
             ];
-
+    
+            const parameters = parametersElements.map(element => parseInt(element.textContent) || 1);
+    
+            parameters.forEach((value, index) => {
+                if (value == maxValue) {
+                    parametersElements[index].classList.add('max-value');
+                }
+            });
+    
+    
             function calculatePoint(angle, value) {
                 const radians = (angle * Math.PI) / 180;
                 const radius = (value / maxValue) * maxRadius;
@@ -308,29 +317,29 @@
                 const y = centerY - radius * Math.sin(radians);
                 return [x, y];
             }
-
+    
             function updateRadarChart() {
                 const angles = [0, 60, 120, 180, 240, 300].map(angle => 180 - (angle + 90));
                 let pathData = "";
                 let circles = "";
-
+    
                 angles.forEach((angle, index) => {
                     const [x, y] = calculatePoint(angle, parameters[index]);
                     pathData += `${index === 0 ? 'M' : 'L'} ${x.toFixed(1)} ${y.toFixed(1)} `;
                     circles += `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="3"/>`;
                 });
-
+    
                 // const [x, y] = calculatePoint(0, parameters[0]);
                 // pathData += `L ${x.toFixed(1)} ${y.toFixed(1)}`;
                 pathData += 'Z';
-
+    
                 page.querySelector('.data-path').setAttribute('d', pathData);
                 page.querySelector('.data-points').innerHTML = circles;
             }
-
+    
             updateRadarChart();
         });
-
+    
         // 東軍だったらsidebarのclassにeastを追加
         const sidebars = document.querySelectorAll(".sidebar");
         sidebars.forEach(sidebar => {
@@ -339,7 +348,7 @@
                 sidebar.classList.add("east");
             }
         });
-
+    
     </script>
 </body>
 

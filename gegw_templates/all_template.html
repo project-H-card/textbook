@@ -43,14 +43,23 @@
 
     const pages = document.querySelectorAll('.pages');
     pages.forEach(page => {
-        const parameters = [
-            parseInt(page.querySelector('.param1-value').textContent) || 1,
-            parseInt(page.querySelector('.param2-value').textContent) || 2 ,
-            parseInt(page.querySelector('.param3-value').textContent) || 3,
-            parseInt(page.querySelector('.param4-value').textContent) || 4,
-            parseInt(page.querySelector('.param5-value').textContent) || 5,
-            parseInt(page.querySelector('.param6-value').textContent) || 5,
+        const parametersElements = [
+            page.querySelector('.param1-value'),
+            page.querySelector('.param2-value'),
+            page.querySelector('.param3-value'),
+            page.querySelector('.param4-value'),
+            page.querySelector('.param5-value'),
+            page.querySelector('.param6-value'),
         ];
+
+        const parameters = parametersElements.map(element => parseInt(element.textContent) || 1);
+
+        parameters.forEach((value, index) => {
+            if (value == maxValue) {
+                parametersElements[index].classList.add('max-value');
+            }
+        });
+
 
         function calculatePoint(angle, value) {
             const radians = (angle * Math.PI) / 180;
