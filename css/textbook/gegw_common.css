@@ -30,9 +30,9 @@ p {
 }
 
 :root {
-    --rate: 1;
+    --rate: 2;
     /* アプリ用は2, 印刷用は4 */
-    font-size: calc(10px * var(--rate));
+    font-size: calc(8px * var(--rate));
 }
 
 .pages {
@@ -250,6 +250,7 @@ p {
     border-radius: calc(1px * var(--rate));
     border: #737373;
     background: rgba(0, 0, 0, 0.7);
+    width: calc(180px * var(--rate));
 }
 
 .profileName {
@@ -267,9 +268,9 @@ p {
     transform: translateY(-40%);
 }
 
-.profileName span span {
+/* .profileName span span {
 
-}
+} */
 
 .profileData {
     font-size: 1.2rem;
@@ -365,10 +366,11 @@ p {
     background-repeat: no-repeat;
     aspect-ratio: 672 / 116;
 
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     font-family: 'ZenMaruGothic';
     padding-left: calc(var(--rate) * 10px);
     margin: calc(var(--rate) * 5px) 0;
+    font-weight: bold;
 }
 
 .dialog {
@@ -378,9 +380,26 @@ p {
     margin-bottom: calc(5px * var(--rate));
 }
 
+.dialogCharacter {
+    position: relative;
+}
+
 .dialog .mini {
     width: calc(20px * var(--rate));
     height: calc(20px * var(--rate));
+}
+
+.dialogCharacterName {
+    position: absolute;
+    font-family: 'TsunagiGothic';
+    top: calc(18px * var(--rate));
+    left: 50%;
+    transform: translateX(-50%);
+    width: max-content;
+    font-weight: normal;
+    font-size: 0.5rem;
+    color: #737373;
+    text-shadow: white 0px 0px calc(1px * var(--rate)), white 0px 0px calc(1px * var(--rate)), white 0px 0px calc(1px * var(--rate)), white 0px 0px calc(1px * var(--rate)), white 0px 0px calc(1px * var(--rate)), white 0px 0px calc(1px * var(--rate));
 }
 
 .dialogContents {
