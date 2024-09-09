@@ -557,7 +557,7 @@ p {
     /* --text-shadow-color: #ff3131; */
     /* --text-shadow-color: #004aad; */
     --text-shadow-color: #004bad77;
-    text-shadow: 0 0 calc(var(--rate) * 1px) var(--text-shadow-color), 0 0 calc(var(--rate) * 1px) var(--text-shadow-color);
+    /* text-shadow: 0 0 calc(var(--rate) * 1px) var(--text-shadow-color), 0 0 calc(var(--rate) * 1px) var(--text-shadow-color); */
     /* text-shadow: 0 0 calc(var(--rate) * 1px) white, 0 0 calc(var(--rate) * 1px) white, 0 0 calc(var(--rate) * 1px) white, 0 0 calc(var(--rate) * 1px) white, 0 0 calc(var(--rate) * 1px) white, 0 0 calc(var(--rate) * 1px) white, 0 0 calc(var(--rate) * 1px) white; */
     /* text-shadow: 0 0 calc(var(--rate) * 1px) red, 0 0 calc(var(--rate) * 1px) red, 0 0 calc(var(--rate) * 1px) red, 0 0 calc(var(--rate) * 1px) red, 0 0 calc(var(--rate) * 1px) red, 0 0 calc(var(--rate) * 1px) red, 0 0 calc(var(--rate) * 1px) red */
 }
