@@ -11,7 +11,8 @@ def template_to_pages(
 
     def remove_ruby_tags(text):
         """<rt>タグの中身と<ruby>タグを削除する。（<ruby>の中身の漢字は残す）"""
-        return re.sub(r'<rt>.*?</rt>|<ruby>|</ruby>', '', text)
+        text = re.sub(r'<rt>.*?</rt>|<ruby>|</ruby>', '', text)
+        return re.sub(r'<.*?>', '', text)
 
     def create_index_page(names_without_ruby):
         # pages/index.html を生成（各ページへのリンクをひたすら並べる）

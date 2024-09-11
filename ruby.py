@@ -42,17 +42,21 @@ def ruby(DATA_FILE_PATH, RESULT_FILE_PATH, SELF_RUBY_DATA_FILE_PATH, DONT_NEED_R
         Returns:
             str: <ruby> つきの HTML風テキスト
         """
-        if "|" in pair["surface"]:
-            pairs = pair["surface"].split("|")
-            furiganas = pair["furigana"].split("|")
+        try:
+            if "|" in pair["surface"]:
+                pairs = pair["surface"].split("|")
+                furiganas = pair["furigana"].split("|")
+                return {
+                    "surface": "".join(pairs),
+                    "replacement":  "".join([f'<ruby>{pairs[i]}<rt>{furiganas[i]}</rt></ruby>' if pairs[i] != furiganas[i] else f'{pairs[i]}' for i in range(len(pairs))])
+                }
             return {
-                "surface": "".join(pairs),
-                "replacement":  "".join([f'<ruby>{pairs[i]}<rt>{furiganas[i]}</rt></ruby>' if pairs[i] != furiganas[i] else f'{pairs[i]}' for i in range(len(pairs))])
+                "surface": pair["surface"],
+                "replacement": f'<ruby>{pair["surface"]}<rt>{pair["furigana"]}</rt></ruby>'
             }
-        return {
-            "surface": pair["surface"],
-            "replacement": f'<ruby>{pair["surface"]}<rt>{pair["furigana"]}</rt></ruby>'
-        }
+        except:
+            print(f"\033[31m{pair} が不正です。\033[0m")
+            exit()
 
 
     def replace_kanji_with_ruby_local(before_text: str, kanji_furigana_pairs):

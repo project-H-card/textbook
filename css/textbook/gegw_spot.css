@@ -7,25 +7,41 @@
     color: white;
     height: 14.5%;
     width: 100%;
-    padding-top: 8%;
+    padding-top: 10%;
 }
 
 .topBlack h2 {
     margin-left: 5%;
+    display: flex;
+    align-items: flex-end;
 }
 .topBlack h2 .small {
     font-size: 2rem;
     margin-right: 5%;
     font-family: 'Noto Sans JP';
+    display: block;
 }
-.topBlack h2 .big {
-    font-size: 4rem;
+.topBlack h2 .small * {
     font-family: 'Noto Sans JP';
 }
+.topBlack h2 .big {
+    display: block;
+    font-size: 3.5rem;
+    font-family: 'Noto Sans JP';
+}
+.topBlack h2 .big * {
+    font-family: 'Noto Sans JP';
+}
+.topBlack h2 .big.smallFont {
+    font-size: 2rem;
+}
+
+
 
 .middleImage {
     position: relative;
     height: 41.6%;
+    width: 100%;
 }
 
 .middleImageMain {
@@ -82,14 +98,19 @@
     justify-content: center;
 }
 
-.mainCharacter .mini {
+.mainCharacter .small {
     font-size: 1rem;
     font-family: 'Noto Sans JP';
 }
+.mainCharacter .small * {
+    font-family: 'Noto Sans JP';
+}
+
 
 .mainCharacter .big {
     font-size: 2rem;
     font-family: 'Noto Sans JP';
+    font-weight: bold;
 }
 
 .mainRight {
@@ -102,11 +123,19 @@
 
 .mainRight .sectionTitle {
     width: 90%;
+    font-family: 'ZenMaruGothic';
+}
+.mainRight .sectionTitle.smallFont {
+    font-size: 1.2rem;
+}
+.mainRight .sectionTitle * {
+    font-family: 'ZenMaruGothic';
+    font-weight: bold;
 }
 
 .mainRight p {
     line-height: 200%;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
 }
 
 

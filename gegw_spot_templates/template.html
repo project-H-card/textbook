@@ -30,22 +30,20 @@
                     </h2>
                 </div>
                 <div class="middleImage">
-                    <img class="middleImageMain" src="../../assets/images/textbook/gegw/place/{場所名}.webp" alt="">
-                    <img class="middleImageMini left" src="" alt="">
+                    <img class="middleImageMain" src="../../assets/images/textbook/gegw/place/{場所名ルビなし}.webp" alt="">
+                    <img class="middleImageMini left" src="../../assets/images/textbook/gegw/map/{場所名ルビなし}.webp" alt="">
                 </div>
                 <div class="pageMain">
                     <div class="mainLeft">
-                        <img class="mainLeftImage" src="" alt="">
+                        <img class="mainLeftImage" src="../../assets/images/textbook/large_illust/gegw/original/{紹介キャラ画像}.webp" alt="">
                         <div class="mainCharacter">
-                            <span class="small">天下への道 岐阜</span>
-                            <span class="big">シュン</span>
+                            <span class="small">{紹介キャラ異名}</span>
+                            <span class="big">{紹介キャラ名}</span>
                         </div>
                     </div>
                     <div class="mainRight">
-                        <h2 class="sectionTitle">不破関</h2>
-                        <p>岐阜県の西側にある関所は不破関というんだぜ。ここは関ヶ原の頃にはもう関所として使われていなかったんだけど、飛鳥時代や奈良時代の頃は鈴鹿関、愛発関と並んで大切な関所だっていわれてたんだ。 近江国と美濃国を分けていたこの関所は、岐阜県から東の地域から物や人が入ったり出ていったりするのを監視していたんだ。 <br>
-                            <br>
-                            たとえば天智天皇の弟、大海人皇子と天智天皇の息子の大友皇子が戦った壬申の乱では、大海人皇子がこの不破関を抑えて、大友皇子側が自由に通行できないようにすることで、連携を取れなくしたことが勝利の理由の一つだって言われているんだぜ。</p>
+                        <h2 class="sectionTitle">{場所詳細}</h2>
+                        <p>{紹介内容}</p>
                     </div>
                 </div>
             </div>
@@ -57,27 +55,25 @@
                 </div>
                 <div class="topBlack">
                     <h2>
-                        <span class="small">岐阜の名所紹介</span>
-                        <span class="big">不破関</span>
+                        <span class="small"><ruby>岐阜<rt>ぎふ</rt></ruby>の<ruby>名所紹介<rt>めいしょしょうかい</rt></ruby></span>
+                        <span class="big">{場所名右}</span>
                     </h2>
                 </div>
                 <div class="middleImage">
-                    <img class="middleImageMain" src="" alt="">
-                    <img class="middleImageMini right" src="" alt="">
+                    <img class="middleImageMain" src="../../assets/images/textbook/gegw/place/{場所名右ルビなし}.webp" alt="">
+                    <img class="middleImageMini left" src="../../assets/images/textbook/gegw/map/{場所名右ルビなし}.webp" alt="">
                 </div>
                 <div class="pageMain">
                     <div class="mainLeft">
-                        <img class="mainLeftImage" src="" alt="">
+                        <img class="mainLeftImage" src="../../assets/images/textbook/large_illust/gegw/original/{紹介キャラ画像右}.webp" alt="">
                         <div class="mainCharacter">
-                            <span class="small">天下への道 岐阜</span>
-                            <span class="big">シュン</span>
+                            <span class="small">{紹介キャラ異名右}</span>
+                            <span class="big">{紹介キャラ名右}</span>
                         </div>
                     </div>
                     <div class="mainRight">
-                        <h2 class="sectionTitle">不破関</h2>
-                        <p>岐阜県の西側にある関所は不破関というんだぜ。ここは関ヶ原の頃にはもう関所として使われていなかったんだけど、飛鳥時代や奈良時代の頃は鈴鹿関、愛発関と並んで大切な関所だっていわれてたんだ。 近江国と美濃国を分けていたこの関所は、岐阜県から東の地域から物や人が入ったり出ていったりするのを監視していたんだ。 <br>
-                            <br>
-                            たとえば天智天皇の弟、大海人皇子と天智天皇の息子の大友皇子が戦った壬申の乱では、大海人皇子がこの不破関を抑えて、大友皇子側が自由に通行できないようにすることで、連携を取れなくしたことが勝利の理由の一つだって言われているんだぜ。</p>
+                        <h2 class="sectionTitle">{場所詳細右}</h2>
+                        <p>{紹介内容右}</p>
                     </div>
                 </div>
 
@@ -114,6 +110,21 @@
             }
         });
 
+
+        // .big と .sectionTitle の文字数が13文字以上の場合、font-sizeを小さくする
+        const bigs = document.querySelectorAll(".big");
+        bigs.forEach(big => {
+            if (big.textContent.length >= 13) {
+                big.classList.add("smallFont");
+            }
+        });
+
+        const sectionTitles = document.querySelectorAll(".sectionTitle");
+        sectionTitles.forEach(sectionTitle => {
+            if (sectionTitle.textContent.length >= 13) {
+                sectionTitle.classList.add("smallFont");
+            }
+        });
     </script>
 </body>
 
