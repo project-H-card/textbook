@@ -29,20 +29,25 @@
 
 .mainArea {
     height: 82%;
-    display: flex;
+    /* display: flex;
     flex-wrap: wrap;
+    justify-content: flex-start; */
+    /* justify-content: center; */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(45%, 1fr));
     justify-content: center;
-    padding-right: 4%;
+    padding-right: 2%;
 }
 
 .rightPage .mainArea {
-    padding-left: 4%;
+    padding-left: 2%;
     padding-right: 0;
 }
 
 .QA {
-    width: 45%;
-    height: 30%;
+    /* width: 45%; */
+    /* height: 30%; */
+    height: 90%;
     margin: auto 1.75%;
     position: relative;
 }
@@ -56,11 +61,14 @@
     color: white;
     border-radius: calc(var(--rate) * 10px);
     height: calc(var(--rate) * 20px);
-    padding: calc(var(--rate) * 5px);
+    padding: calc(var(--rate) * 5px) calc(var(--rate) * 10px);
     text-align: center;
     z-index: 100;
     width: max-content;
     text-shadow: none;
+}
+.QATitle.east {
+    background: #f85c84;
 }
 
 .QAMain {
@@ -72,12 +80,16 @@
     background: white;
     border-radius: calc(var(--rate) * 5px);
     padding: calc(var(--rate) * 15px) calc(var(--rate) * 5px);
+    padding-top: calc(var(--rate) * 20px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .dialogContents {
     color: black;
     text-shadow: none;
-    font-size: 0.7rem;
+    font-size: 0.65rem;
 }
 
 .Q {

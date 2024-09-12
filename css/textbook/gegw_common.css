@@ -31,7 +31,7 @@ p {
 }
 
 :root {
-    --rate: 2;
+    --rate: 4;
     /* アプリ用は2, 印刷用は4 */
     font-size: calc(8px * var(--rate));
 }

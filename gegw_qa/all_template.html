@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全カード | ハイスト人物図鑑</title>
+    <link rel="stylesheet" href="../../css/textbook/gegw_common.css">
+    <link rel="stylesheet" href="../../css/textbook/gegw_qa.css">
+    <link rel="stylesheet" href="../../css/textbook/all_template.css">
+</head>
+<body>
+    <main>
+        <div class="pageArea"></div>
+    </main>
+    <div class="controls">
+        <input type="button" value="ダウンロード" id="downloadButton">
+        <div id="downloadStatus"><span>ダウンロード開始</span></div>
+    </div>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/dom-to-image@2.6.0/dist/dom-to-image.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js" integrity="sha512-dfX5uYVXzyU8+KHqj8bjo7UkOdg18PaOtpa48djpNbZHwExddghZ+ZmzWT06R5v6NSk3ZUfsH6FNEDepLx9hPQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="gegw_qa.js"></script>
+<script src="../../js/download.js"></script>
+<script src="../../js/adjust-size.js"></script>
+<script>
+    const images = document.querySelectorAll('img');
+    images.forEach(img => {
+        img.addEventListener('error', () => {
+            console.log(img.src);
+            img.src = '../../assets/images/textbook/common/errorGreen.webp';
+        });
+
+        // テンプレートでui を確かめるためにエラーを出力
+        // img.src = '../../assets/images/textbook/common/errorGreen.webp';
+    });
+
+    // 東軍だったらsidebarのclassにeastを追加
+    const sidebars = document.querySelectorAll(".sidebar");
+    sidebars.forEach(sidebar => {
+        const alt = sidebar.querySelector("img").alt;
+        if (alt.includes("東軍")) {
+            sidebar.classList.add("east");
+        }
+    });
+
+</script>
+</html>
