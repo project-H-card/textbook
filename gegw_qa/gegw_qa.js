@@ -3,7 +3,7 @@ const csvFilePath = '/gegw_qa/data/data_with_ruby.csv';
 
 
 function removeRuby(rubyHTML) {
-    return rubyHTML.replace(/<rt>.*?<\/rt>/, '').replace("<ruby>", "").replace("</ruby>", "");
+    return rubyHTML.replaceAll(/<rt>.*?<\/rt>/g, '').replaceAll("<ruby>", "").replaceAll("</ruby>", "");
 }
 
 // CSVを読み込んでデータを表示
