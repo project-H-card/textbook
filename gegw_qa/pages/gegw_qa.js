@@ -1,5 +1,5 @@
 // CSVファイルのパス
-const csvFilePath = '/gegw_qa/data/data_with_ruby.csv';
+const csvFilePath = '../data/data_with_ruby.csv';
 
 
 function removeRuby(rubyHTML) {
