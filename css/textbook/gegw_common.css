@@ -242,7 +242,7 @@ p {
     position: absolute;
 }
 
-.profile h3 {
+/* .profile h3 {
     font-size: 2.1rem;
 }
 
@@ -267,15 +267,18 @@ p {
     display: inline-flex;
     flex-direction: column;
     transform: translateY(-40%);
-}
-
-/* .profileName span span {
-
-} */
+} 
 
 .profileData {
     font-size: 1.2rem;
     padding-left: calc(10px * var(--rate));
+} */
+
+.profileRow {
+    border-bottom: 1px solid #3d1a18;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
 }
 
 .tips {
@@ -349,7 +352,7 @@ p {
 
 .rightHalfArea {
     width: 50%;
-    padding: calc(var(--rate) * 10px);
+    padding: 0 calc(var(--rate) * 10px);
 }
 
 .separator {
@@ -407,7 +410,13 @@ p {
 
 .dialogContents {
     margin-left: calc(5px * var(--rate));
-    font-size: 0.8rem;
+    font-size: 0.7rem;
+}
+
+.where {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 /* レーダーチャート関連 */
