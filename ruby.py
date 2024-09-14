@@ -233,6 +233,7 @@ def ruby(DATA_FILE_PATH, RESULT_FILE_PATH, SELF_RUBY_DATA_FILE_PATH, DONT_NEED_R
 
     def remove_columns_after_empty_array(array):
         """csvから読みとったデータのうち、空行以降を切り取る。
+        （空白のみの行などもあるので、5文字以下は空行とみなす）
 
         Args:
             array (list): 切り取り前の配列
@@ -240,11 +241,12 @@ def ruby(DATA_FILE_PATH, RESULT_FILE_PATH, SELF_RUBY_DATA_FILE_PATH, DONT_NEED_R
         Returns:
             list: 切り取り後の配列
         """
+        decide_empty_length = 5
         # 空の配列を見つける
         empty_index = None
         for i, column in enumerate(array):
             column_strs = "".join(column)
-            if not column or not column_strs or len(column_strs) < 10:  # 空の配列を見つけた場合
+            if not column or not column_strs or len(column_strs) < decide_empty_length:  # 空の配列を見つけた場合
                 empty_index = i
                 break
 
@@ -265,6 +267,7 @@ def ruby(DATA_FILE_PATH, RESULT_FILE_PATH, SELF_RUBY_DATA_FILE_PATH, DONT_NEED_R
             header = next(reader)
             
             data = list(reader)
+        # 空行（5文字以下の行）を削除
         data = remove_columns_after_empty_array(data)
         
         dont_need_ruby_columns_num = list(map(lambda column: header.index(column), DONT_NEED_RUBY_COLUMNS))

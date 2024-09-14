@@ -317,7 +317,9 @@ p {
 /* 右ページ */
 .rightPage {
     color: black;
-    background: url("../../assets/images/textbook/common/rightBG.webp");
+    background-image: url("../../assets/images/textbook/common/rightBG.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .rightPage > div {
