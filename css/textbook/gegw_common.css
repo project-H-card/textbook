@@ -192,10 +192,11 @@ p {
 .aboutIllust h3 .mini {
     width: calc(24px * var(--rate));
     height: calc(24px * var(--rate));
-    margin-right: calc(5px * var(--rate));
+    /* margin-right: calc(5px * var(--rate)); */
 }
 
 .aboutIllust h3 span {
+    margin-left: calc(5px * var(--rate));
     font-size: 1.4rem;
 }
 
@@ -215,6 +216,23 @@ p {
     /* top: calc(1000% / 21); */
     bottom: 35%;
     left: 5%;
+}
+
+.aboutArmor {
+    position: absolute;
+    width: 55%;
+    bottom: 10%;
+    right: 2%;
+}
+.aboutArmor h3 {
+    font-size: 1.6rem;
+}
+.aboutArmor .dialogCharacter .mini {
+    width: calc(24px * var(--rate));
+    height: calc(24px * var(--rate));
+}
+.aboutArmor .dialogContents {
+    font-size: 1rem;
 }
 
 .cardArea {
@@ -301,8 +319,10 @@ p {
     font-size: 0.8rem;
     font-weight: bold;
     padding: calc(3px * var(--rate));
+    padding-top: calc(6px * var(--rate));
     position: relative;
     text-shadow: none;
+    line-height: calc(12px * var(--rate));
 }
 
 .tipsContent::after {
@@ -398,7 +418,8 @@ p {
 .dialogCharacterName {
     position: absolute;
     font-family: 'TsunagiGothic';
-    top: calc(18px * var(--rate));
+    /* top: calc(18px * var(--rate)); */
+    bottom: calc(1px * var(--rate));
     left: 50%;
     transform: translateX(-50%);
     width: max-content;

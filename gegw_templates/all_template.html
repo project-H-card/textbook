@@ -100,5 +100,19 @@
         }
     });
 
+    // .dialogCharacterName のテキストから数字を除去
+    const dialogCharacterNames = document.querySelectorAll(".dialogCharacterName");
+    dialogCharacterNames.forEach(dialogCharacterName => {
+        dialogCharacterName.textContent = dialogCharacterName.textContent.replace(/\d/g, '');
+    });
+
+    // .aboutArmor のテキストに「未定」が含まれていたら非表示
+    const aboutArmors = document.querySelectorAll(".aboutArmor");
+    aboutArmors.forEach(aboutArmor => {
+        if (aboutArmor.textContent.includes("未定")) {
+            aboutArmor.style.display = "none";
+        }
+    });
+
 </script>
 </html>
