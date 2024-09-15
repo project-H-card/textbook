@@ -441,7 +441,7 @@ p {
 }
 
 /* レーダーチャート関連 */
-.radar-chart-2 {
+/* .radar-chart-2 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -503,7 +503,7 @@ p {
 
 .radar-chart-2 dd {
     margin: 0;
-}
+} */
 
 .radar-chart-3 {
     display: flex;
@@ -556,7 +556,8 @@ p {
 }
 
 .radar-chart-3 dl > div:nth-child(4) {
-    bottom: 0;
+    /* bottom: 0; */
+    bottom: -3%;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -577,22 +578,21 @@ p {
     margin: 0;
     font-size: 1.1em;
     font-weight: bold;
+    color: black;
+    --text-shadow-color: white;
+    text-shadow: 0 0 calc(var(--rate) * 1px) var(--text-shadow-color), 0 0 calc(var(--rate) * 1px) var(--text-shadow-color), 0 0 calc(var(--rate) * 1px) var(--text-shadow-color), 0 0 calc(var(--rate) * 1px) var(--text-shadow-color), 0 0 calc(var(--rate) * 1px) var(--text-shadow-color), 0 0 calc(var(--rate) * 1px) var(--text-shadow-color), 0 0 calc(var(--rate) * 1px) var(--text-shadow-color), 0 0 calc(var(--rate) * 1px) var(--text-shadow-color), 0 0 calc(var(--rate) * 1px) var(--text-shadow-color), 0 0 calc(var(--rate) * 1px) var(--text-shadow-color), 0 0 calc(var(--rate) * 1px) var(--text-shadow-color), 0 0 calc(var(--rate) * 1px) var(--text-shadow-color), 0 0 calc(var(--rate) * 1px) var(--text-shadow-color);
 }
 .radar-chart-3 dd {
     margin: 0;
     font-size: 1.6em;
     font-weight: bold;
     transform: translateY(-0.2em);
+    color: black;
+    --text-shadow-color: white;
+    text-shadow: 0 0 calc(var(--rate) * 1px) var(--text-shadow-color), 0 0 calc(var(--rate) * 1px) var(--text-shadow-color), 0 0 calc(var(--rate) * 1px) var(--text-shadow-color), 0 0 calc(var(--rate) * 1px) var(--text-shadow-color), 0 0 calc(var(--rate) * 1px) var(--text-shadow-color), 0 0 calc(var(--rate) * 1px) var(--text-shadow-color), 0 0 calc(var(--rate) * 1px) var(--text-shadow-color), 0 0 calc(var(--rate) * 1px) var(--text-shadow-color), 0 0 calc(var(--rate) * 1px) var(--text-shadow-color), 0 0 calc(var(--rate) * 1px) var(--text-shadow-color), 0 0 calc(var(--rate) * 1px) var(--text-shadow-color), 0 0 calc(var(--rate) * 1px) var(--text-shadow-color), 0 0 calc(var(--rate) * 1px) var(--text-shadow-color);
 }
 .radar-chart-3 dd.max-value {
-    font-size: 1.8em;
-    color: #004aad;
-    /* --text-shadow-color: #ff3131; */
-    /* --text-shadow-color: #004aad; */
-    --text-shadow-color: #004bad77;
-    /* text-shadow: 0 0 calc(var(--rate) * 1px) var(--text-shadow-color), 0 0 calc(var(--rate) * 1px) var(--text-shadow-color); */
-    /* text-shadow: 0 0 calc(var(--rate) * 1px) white, 0 0 calc(var(--rate) * 1px) white, 0 0 calc(var(--rate) * 1px) white, 0 0 calc(var(--rate) * 1px) white, 0 0 calc(var(--rate) * 1px) white, 0 0 calc(var(--rate) * 1px) white, 0 0 calc(var(--rate) * 1px) white; */
-    /* text-shadow: 0 0 calc(var(--rate) * 1px) red, 0 0 calc(var(--rate) * 1px) red, 0 0 calc(var(--rate) * 1px) red, 0 0 calc(var(--rate) * 1px) red, 0 0 calc(var(--rate) * 1px) red, 0 0 calc(var(--rate) * 1px) red, 0 0 calc(var(--rate) * 1px) red */
+    font-size: 2em;
 }
 
 

@@ -36,10 +36,11 @@
 
     
     // レーダーチャートの描画
-    const centerX = 100;
-    const centerY = 100;
+    const centerX = 120;
+    const centerY = 120;
     const maxRadius = 100;
     const maxValue = 5;
+    const pointRadius = 2;
 
     const pages = document.querySelectorAll('.pages');
     pages.forEach(page => {
@@ -77,7 +78,7 @@
             angles.forEach((angle, index) => {
                 const [x, y] = calculatePoint(angle, parameters[index]);
                 pathData += `${index === 0 ? 'M' : 'L'} ${x.toFixed(1)} ${y.toFixed(1)} `;
-                circles += `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="3"/>`;
+                circles += `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${pointRadius}"/>`;
             });
 
             // const [x, y] = calculatePoint(0, parameters[0]);
