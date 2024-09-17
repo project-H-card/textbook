@@ -13,6 +13,11 @@
     src: url("../../assets/fonts/ZenMaruGothic-Medium.ttf");
 }
 
+@font-face {
+    font-family: 'Roboto';
+    src: url("../../assets/fonts/Roboto-Bold.ttf");
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -187,6 +192,7 @@ p {
     font-size: 1.6rem;
     display: flex;
     align-items: center;
+    font-family: 'NotosansJP';
 }
 
 .aboutIllust h3 .mini {
@@ -197,14 +203,26 @@ p {
 
 .aboutIllust h3 span {
     margin-left: calc(5px * var(--rate));
+    font-size: 2rem;
+    font-family: 'NotosansJP';
+}
+.aboutIllust h3 span * {
+    font-family: 'NotosansJP';
+}
+
+.aboutIllust h3 span.longText {
+    font-size: 1.6rem;
+}
+.aboutIllust h3 span.longText.veryLongText {
     font-size: 1.4rem;
 }
 
 .aboutIllust p {
     border-bottom: 1px solid white;
     border-left: 1px solid white;
-    padding: calc(3px * var(--rate));
-    border-radius: calc(3px * var(--rate));
+    padding-left: calc(8px * var(--rate));
+    padding-bottom: calc(4px * var(--rate));
+    border-radius: 0 0 0 calc(3px * var(--rate));
 }
 
 #aboutIllust1 {
@@ -225,8 +243,13 @@ p {
     right: 2%;
 }
 .aboutArmor h3 {
-    font-size: 1.6rem;
+    font-size: 2rem;
+    font-family: 'NotosansJP';
 }
+.aboutArmor h3 * {
+    font-family: 'NotosansJP';
+}
+
 .aboutArmor .dialogCharacter .mini {
     width: calc(24px * var(--rate));
     height: calc(24px * var(--rate));
@@ -297,6 +320,7 @@ p {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
+    padding: calc(1.5px * var(--rate)) 0;
 }
 
 .tips {
@@ -365,9 +389,10 @@ p {
 
 .rightPage .rightMainArea {
     margin: 0;
+    margin-top: 3%;
     width: 100%;
     display: flex;
-    height: 85%;
+    height: 89%;
 }
 
 .rightHalfArea {
@@ -398,12 +423,18 @@ p {
     margin: calc(var(--rate) * 5px) 0;
     font-weight: bold;
 }
+.sectionTitle * {
+    font-family: 'ZenMaruGothic';
+}
 
 .dialog {
     display: flex;
     justify-content: start;
     align-items: start;
     margin-bottom: calc(5px * var(--rate));
+}
+.dialog.shortText {
+    align-items: center;
 }
 
 .dialogCharacter {
@@ -431,7 +462,7 @@ p {
 
 .dialogContents {
     margin-left: calc(5px * var(--rate));
-    font-size: 0.7rem;
+    font-size: 0.7rem; /* 0.7rem */
 }
 
 .where {
@@ -514,8 +545,9 @@ p {
     height: 230px; */
     width: calc(var(--rate) * 100px);
     height: calc(var(--rate) * 100px);
-    margin: 0 auto;
-    padding: 35px;
+    margin: calc(var(--rate) * 6px) auto;
+    /* padding: 35px; */
+    padding: calc(var(--rate) * 14px);
     box-sizing: content-box;
 }
 
@@ -578,15 +610,20 @@ p {
     margin: 0;
     font-size: 1.1em;
     font-weight: bold;
+    font-family: 'NotosansJP';
     color: black;
     --text-shadow-color: white;
     text-shadow: 0 0 calc(var(--rate) * 1px) var(--text-shadow-color), 0 0 calc(var(--rate) * 1px) var(--text-shadow-color), 0 0 calc(var(--rate) * 1px) var(--text-shadow-color), 0 0 calc(var(--rate) * 1px) var(--text-shadow-color), 0 0 calc(var(--rate) * 1px) var(--text-shadow-color), 0 0 calc(var(--rate) * 1px) var(--text-shadow-color), 0 0 calc(var(--rate) * 1px) var(--text-shadow-color), 0 0 calc(var(--rate) * 1px) var(--text-shadow-color), 0 0 calc(var(--rate) * 1px) var(--text-shadow-color), 0 0 calc(var(--rate) * 1px) var(--text-shadow-color), 0 0 calc(var(--rate) * 1px) var(--text-shadow-color), 0 0 calc(var(--rate) * 1px) var(--text-shadow-color), 0 0 calc(var(--rate) * 1px) var(--text-shadow-color);
+}
+.radar-chart-3 dt * {
+    font-family: 'NotosansJP';
 }
 .radar-chart-3 dd {
     margin: 0;
     font-size: 1.6em;
     font-weight: bold;
-    transform: translateY(-0.2em);
+    font-family: 'Roboto';
+    transform: translateY(-0.3em);
     color: black;
     --text-shadow-color: white;
     text-shadow: 0 0 calc(var(--rate) * 1px) var(--text-shadow-color), 0 0 calc(var(--rate) * 1px) var(--text-shadow-color), 0 0 calc(var(--rate) * 1px) var(--text-shadow-color), 0 0 calc(var(--rate) * 1px) var(--text-shadow-color), 0 0 calc(var(--rate) * 1px) var(--text-shadow-color), 0 0 calc(var(--rate) * 1px) var(--text-shadow-color), 0 0 calc(var(--rate) * 1px) var(--text-shadow-color), 0 0 calc(var(--rate) * 1px) var(--text-shadow-color), 0 0 calc(var(--rate) * 1px) var(--text-shadow-color), 0 0 calc(var(--rate) * 1px) var(--text-shadow-color), 0 0 calc(var(--rate) * 1px) var(--text-shadow-color), 0 0 calc(var(--rate) * 1px) var(--text-shadow-color), 0 0 calc(var(--rate) * 1px) var(--text-shadow-color);

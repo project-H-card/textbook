@@ -115,5 +115,27 @@
         }
     });
 
+    // .dialog のうち、 .dialogContents のルビを除いたテキストの長さが48文字以下の場合、.dialog に .shortText を追加
+    const dialogs = document.querySelectorAll(".dialog");
+    dialogs.forEach(dialog => {
+        const dialogContents = dialog.querySelector(".dialogContents");
+        const dialogContentsText = dialogContents.innerHTML.replaceAll(/<rt>.*?<\/rt>/g, '').replaceAll("<ruby>", "").replaceAll("</ruby>", "");
+        if (dialogContentsText.length <= 48) {
+            dialog.classList.add("shortText");
+        }
+    });
+
+    // .aboutIllust h3 span のうちルビを除いたテキストの長さが7文字以上の場合、 span に .longText を追加
+    const aboutIllustSpans = document.querySelectorAll(".aboutIllust h3 span");
+    aboutIllustSpans.forEach(aboutIllustSpan => {
+        const aboutIllustSpanText = aboutIllustSpan.innerHTML.replaceAll(/<rt>.*?<\/rt>/g, '').replaceAll("<ruby>", "").replaceAll("</ruby>", "");
+        if (aboutIllustSpanText.length >= 7) {
+            aboutIllustSpan.classList.add("longText");
+            if(aboutIllustSpanText.length >= 10){
+                aboutIllustSpan.classList.add("veryLongText");
+            }
+        }
+    });
+
 </script>
 </html>
