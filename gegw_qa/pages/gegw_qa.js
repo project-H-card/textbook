@@ -35,10 +35,6 @@ Papa.parse(csvFilePath, {
                 }
                 currentPages += `
                     <div class="page ${pageCounter%2 == 1 ? 'leftPage' : 'rightPage'}">
-                        ${pageCounter%2 == 0 ? `<div class="deckTitle">
-                                <img src="../../assets/images/textbook/gegw/deck_title.webp" alt="">
-                            </div>
-                        ` : ''}
                         <div class="topBlack">
                             ${pageCounter%2 == 1 ? `
                                 <h2>クイズの<ruby>答<rt>こた</rt></ruby>えと<ruby>解説<rt>かいせつ</rt></ruby></h2>
@@ -78,7 +74,7 @@ Papa.parse(csvFilePath, {
                         <div class="dialog">
                             <div class="dialogCharacter">
                                 <img src="../../assets/images/textbook/mini_circle/gegw/${removeRuby(row.名前)}.webp" alt="" class="mini">
-                                <div class="dialogCharacterName">${row.名前}</div>
+                                <div class="dialogCharacterName">${removeRuby(row.名前)}</div>
                             </div>
                             <p class="dialogContents Q">${row.質問}</p>
                         </div>
@@ -92,7 +88,7 @@ Papa.parse(csvFilePath, {
                         <div class="dialog">
                             <div class="dialogCharacter">
                                 <img src="../../assets/images/textbook/mini_circle/gegw/${removeRuby(row.名前)}.webp" alt="" class="mini">
-                                <div class="dialogCharacterName">${row.名前}</div>
+                                <div class="dialogCharacterName">${removeRuby(row.名前)}</div>
                             </div>
                             <p class="dialogContents">${row.解説}</p>
                         </div>
@@ -105,9 +101,6 @@ Papa.parse(csvFilePath, {
         if (currentPage) {
             currentPages += `
                 <div class="page rightPage">
-                    <div class="deckTitle">
-                        <img src="../../assets/images/textbook/gegw/deck_title.webp" alt="">
-                    </div>
                     <div class="topBlack"></div>
                     <div class="mainArea">
                         ${currentPage}

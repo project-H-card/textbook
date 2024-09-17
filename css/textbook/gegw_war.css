@@ -27,6 +27,9 @@
     font-family: 'Noto Sans JP';
     font-weight: bold;
 }
+.topBlack h2 * {
+    font-family: 'Noto Sans JP';
+}
 .topBlack p {
     font-size: 0.8rem;
     margin-left: 5%;
