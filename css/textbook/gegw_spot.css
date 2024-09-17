@@ -9,7 +9,7 @@
     color: white;
     height: 14.5%;
     width: 100%;
-    padding-top: 10%;
+    padding-top: 8%;
 }
 
 .topBlack h2 {
@@ -22,6 +22,7 @@
     margin-right: 5%;
     font-family: 'Noto Sans JP';
     display: block;
+    width: calc(var(--rate) * 130px);
 }
 .topBlack h2 .small * {
     font-family: 'Noto Sans JP';
@@ -36,6 +37,7 @@
 }
 .topBlack h2 .big.smallFont {
     font-size: 2rem;
+    width: calc(var(--rate) * 140px);
 }
 
 

@@ -33,7 +33,7 @@ document.querySelector("#downloadButton").addEventListener("click", async (e) =>
     } else {
         pageElements = [...document.querySelectorAll(".pages")];
     }
-    pageElements = [...document.querySelectorAll(".raderChart")];
+    // pageElements = [...document.querySelectorAll(".raderChart")];
     const elemNum = pageElements.length;
 
     // const loadErrorImageNames = loadErrorImages.map((path) => decodeURI(path.split("/").pop()));

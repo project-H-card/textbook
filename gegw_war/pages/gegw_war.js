@@ -2,6 +2,14 @@
 //     return rubyHTML.replaceAll(/<rt>.*?<\/rt>/g, '').replaceAll("<ruby>", "").replaceAll("</ruby>", "");
 // }
 
+function pageNumber2mark(pageNumber) {
+    switch (pageNumber) {
+        case 1: return "①";
+        case 2: return "②";
+        case 3: return "③";
+    }
+}
+
 
 // ページ番号をカウントするための変数
 let pageNumber = 1;
@@ -13,7 +21,7 @@ const main = document.querySelector('.pageArea');
 // ページを挿入する関数
 const insertPage = (content) => {
     const pageHtml = `
-    <div class="pages">
+    <div class="pages" data-name="関ヶ原の戦いとは${pageNumber}.png">
         <div class="innerFrame"></div>
         <div class="mainFrame"></div>
 
@@ -21,7 +29,7 @@ const insertPage = (content) => {
 
         <div class="page leftPage">
             <div class="topBlack">
-                <h2>関ヶ原の戦いとは${pageNumber}</h2>
+                <h2><ruby>関ヶ原<rt>せきがはら</rt></ruby>の<ruby>戦<rt>たたか</rt></ruby>いとは${pageNumber2mark(pageNumber)}</h2>
             </div>
             <div class="mainArea">
                 <div class="mainHalfArea">
@@ -36,9 +44,6 @@ const insertPage = (content) => {
 
         <div class="page rightPage">
             <div class="topBlack"></div>
-            <div class="deckTitle">
-                <img src="../../assets/images/textbook/gegw/deck_title.webp" alt="">
-            </div>
             <div class="mainArea">
                 <div class="mainHalfArea">
                     ${content.rightPageLeft || ''}
@@ -124,5 +129,19 @@ Papa.parse(csvFilePath, {
     header: true,
     complete: function(results) {
         generateMainData(results.data);
+
+        const dialogs = document.querySelectorAll(".dialog");
+        dialogs.forEach(dialog => {
+            const dialogContents = dialog.querySelector(".dialogContents");
+            const dialogContentsText = dialogContents.innerHTML.replaceAll(/<rt>.*?<\/rt>/g, '').replaceAll("<ruby>", "").replaceAll("</ruby>", "");
+            if (dialogContentsText.length <= 48) {
+                dialog.classList.add("shortText");
+            }
+        });
+
+        // 最後の .topBlack の中に <h2>関ヶ原古戦場</h2>を追加
+        const topBlacks = document.querySelectorAll(".topBlack");
+        topBlacks[topBlacks.length - 1].innerHTML = '<h2><ruby>関ヶ原古戦場<rt>せきがはらこせんじょう</rt></ruby></h2>';
+        
     }
 });
