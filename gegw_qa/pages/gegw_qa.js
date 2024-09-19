@@ -38,7 +38,7 @@ Papa.parse(csvFilePath, {
                         <div class="topBlack">
                             ${pageCounter%2 == 1 ? `
                                 <h2>クイズの<ruby>答<rt>こた</rt></ruby>えと<ruby>解説<rt>かいせつ</rt></ruby></h2>
-                                <p>各<ruby>人物<rt>じんぶつ</rt></ruby>の<ruby>紹介<rt>しょうかい</rt></ruby>ページの<ruby>下<rt>した</rt></ruby>にあるクイズの<ruby>答<rt>こた</rt></ruby>えと<ruby>解説<rt>かいせつ</rt></ruby>をまとめています。<ruby>全問<rt>ぜんもん</rt></ruby><ruby>正解<rt>せいかい</rt></ruby>で<ruby>関ヶ原<rt>せきがはら</rt></ruby>の<ruby>戦<rt>たたか</rt></ruby>いマスター！？</p>
+                                <p><ruby>各人物<rt>かくじんぶつ</rt></ruby>の<ruby>紹介<rt>しょうかい</rt></ruby>ページの<ruby>下<rt>した</rt></ruby>にあるクイズの<ruby>答<rt>こた</rt></ruby>えと<ruby>解説<rt>かいせつ</rt></ruby>をまとめています。<ruby>全問<rt>ぜんもん</rt></ruby><ruby>正解<rt>せいかい</rt></ruby>で<ruby>関ヶ原<rt>せきがはら</rt></ruby>の<ruby>戦<rt>たたか</rt></ruby>いマスター！？</p>
                             ` : ''}
                         </div>
                         <div class="mainArea">
@@ -62,7 +62,7 @@ Papa.parse(csvFilePath, {
             // 新しい.pagesが12人以上なら新しい.pagesを作る
             if (index % 12 === 0 && index !== 0) {
                 pagesCounter++;
-                pageDivs += `<div class="pages" data-name="${removeRuby(row.名前)}.png">${currentPages}</div>`;
+                pageDivs += `<div class="pages" data-name="クイズQA${pagesCounter}.png">${currentPages}</div>`;
                 currentPages = '';
             }
 
@@ -113,7 +113,7 @@ Papa.parse(csvFilePath, {
                     <div class="sidebarMargin"></div>
                 </div>
             `;
-            pageDivs += `<div class="pages" data-name="${data[data.length - 2].名前}.png">${currentPages}</div>`;
+            pageDivs += `<div class="pages" data-name="クイズQA${pagesCounter+1}.png">${currentPages}</div>`;
         }
 
         // ページエリアに挿入

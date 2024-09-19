@@ -60,6 +60,7 @@ function processFolder(epsFolder, pngFolder) {
             notFoundFiles.push(pngFile);
             // alert('「' + pngFile.name + '」に対応するaiファイルが見つかりませんでした。「' + pngFile.name.replace(".png", "") + '」を含むaiファイルがあるか確認してください。');
         }
+        // break; // テスト用に一時停止
     }
     if(notFoundFiles.length > 0) {
         var message = notFoundFiles.length + '個のpngファイルに対応するepsファイルが見つかりませんでした。';
@@ -77,18 +78,32 @@ function processFile(epsFile, pngFile) {
     // // 配置したい位置の座標（ポイント単位）
 
 
-    // プリントパックのA5見開きサイズの、塗り足しを含め左上と右下の座標
+    // プリントパックの見開きA4サイズ（片面がA5）の、塗り足しを含め左上と右下の座標
 
-    var left = 86.5
-    var top = 57.5
-    var right = 945.39
-    var bottom = 669.79
+    // var left = 86.5
+    // var top = 57.5
+    // var right = 945.39
+    // var bottom = 669.79
     
+    // var width = right - left;
+    // var height = bottom - top;
+
+    // var x = left - (182.02 - 86.5) // なぜか182.02が左端になる
+    // var y = top - (124.02 - 57.5) // なぜか124.02が上端になる
+
+    // プリントパックの見開きB4サイズ（片面がB5）の、塗り足しを含め左上と右下の座標
+    var left = 70.51
+    var top = 48.51
+    var right = 1119.32
+    var bottom = 794.02
+
     var width = right - left;
     var height = bottom - top;
 
-    var x = left - (182.02 - 86.5) // なぜか182.02が左端になる
-    var y = top - (124.02 - 57.5) // なぜか124.02が上端になる
+    // var x = left
+    // var y = top
+    var x = left - (62.67 - left)
+    var y = top - (-498.36 - top)
 
     // alert('width: ' + width + ', height: ' + height + ', x: ' + x + ', y: ' + y);
 
