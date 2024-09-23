@@ -55,6 +55,21 @@
     width: 50%;
     padding: calc(var(--rate) * 10px);
 }
+.leftPage .mainHalfArea:nth-child(1), .rightPage .mainHalfArea:nth-child(3) {
+    width: calc(50% - var(--rate) * 5px);
+    padding-left: calc(var(--rate) * 5px);
+    padding-right: calc(var(--rate) * 5px);
+}
+.leftPage .mainHalfArea:nth-child(3) {
+    width: calc(50% + var(--rate) * 5px);
+    padding-left: calc(var(--rate) * 5px);
+    padding-right: calc(var(--rate) * 15px);
+}
+.rightPage .mainHalfArea:nth-child(1) {
+    width: calc(50% + var(--rate) * 5px);
+    padding-left: calc(var(--rate) * 15px);
+    padding-right: calc(var(--rate) * 5px);
+}
 
 .warImage {
     width: 100%;

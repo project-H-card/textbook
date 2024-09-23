@@ -36,8 +36,8 @@ p {
 }
 
 :root {
-    --rate: 4;
-    /* アプリ用は2, 印刷用は4 */
+    --rate: 6;
+    /* アプリ用は2, 簡易印刷用は4 B5でdpi350→→6 */
     font-size: calc(8px * var(--rate));
 }
 
@@ -71,7 +71,7 @@ p {
     height: calc(601px * var(--rate));
 }
 .sidebarMain img {
-    width: 90%;
+    width: 95%;
     height: auto;
     margin: auto;
     display: block;
@@ -166,6 +166,7 @@ p {
     position: absolute;
     top: calc(14px * var(--rate));
     left: calc(10px * var(--rate));
+    width: 60%;
     font-size: 2.4rem;
     text-shadow: 0px 0px calc(6px * var(--rate)) black;
     font-family: 'Noto Sans JP';
@@ -227,7 +228,8 @@ p {
 
 #aboutIllust1 {
     top: calc(750% / 21);
-    right: 2%;
+    /* right: 2%; */
+    right: 5%;
 }
 
 #aboutIllust2 {
@@ -322,6 +324,9 @@ p {
     align-items: baseline;
     padding: calc(1.5px * var(--rate)) 0;
 }
+.profileRow span {
+    font-size: 0.8rem;
+}
 
 .tips {
     display: flex;
@@ -397,7 +402,16 @@ p {
 
 .rightHalfArea {
     width: 50%;
-    padding: 0 calc(var(--rate) * 10px);
+    padding: 0 calc(var(--rate) * 8px); /* 10px */
+}
+
+.rightHalfArea.right-left {
+    width: 43%;
+    padding-left: calc(var(--rate) * 15px);
+}
+.rightHalfArea.right-right {
+    width: 57%;
+    padding-right: calc(var(--rate) * 5px);
 }
 
 .separator {
@@ -462,7 +476,7 @@ p {
 
 .dialogContents {
     margin-left: calc(5px * var(--rate));
-    font-size: 0.7rem; /* 0.7rem */
+    font-size: 0.8rem; /* 0.7rem */
 }
 
 .where {
@@ -721,4 +735,48 @@ p {
     border: calc(5px * var(--rate)) solid transparent;
     border-top-color: white;
     transform: translateY(-50%);
+}
+
+/* 個別対応 */
+#長宗我部盛親 .largeIllust {
+    right: -5%;
+}
+#安国寺恵瓊 .largeIllust {
+    right: -3%;
+}
+#毛利輝元 .largeIllust {
+    right: -6%;
+}
+#宇喜多秀家 #aboutIllust1 {
+    top: calc(850% / 21);
+}
+#石田三成 #aboutIllust1 {
+    top: calc(1100% / 21);
+}
+#小西行長 #aboutIllust1 {
+    top: calc(1000% / 21);
+}
+#細川忠興 .largeIllust {
+    left: 0;
+}
+#細川興元 .largeIllust {
+    left: 0;
+}
+#柳生宗矩 .largeIllust {
+    right: -5%;
+}
+#黒田長政 #aboutIllust1 {
+    top: calc(1100% / 21);
+}
+#藤堂高虎 #aboutIllust1 {
+    top: calc(1100% / 21);
+}
+#池田輝政 #aboutIllust1 {
+    top: calc(950% / 21);
+}
+#松平忠吉 .largeIllust {
+    right: -5%;
+}
+#本多忠朝 #aboutIllust1 {
+    top: calc(900% / 21);
 }
