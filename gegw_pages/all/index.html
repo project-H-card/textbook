@@ -5344,7 +5344,7 @@
                             <img src="../../assets/images/textbook/common/mini/gegw/シュン8.webp" alt="" class="mini">
                             <div class="dialogCharacterName">シュン8</div>
                         </div>
-                        <p class="dialogContents">やっぱり<ruby>山内一豊<rt>やまうちかずとよ</rt></ruby>といえば、<ruby>奥<rt>おく</rt></ruby>さんの<ruby>千代<rt>ちよ</rt></ruby>さんだよな。<ruby>小山評定<rt>おやまひょうじょう</rt></ruby>の<ruby>時<rt>とき</rt></ruby>に<ruby>家康<rt>いえやす</rt></ruby>から<ruby>評価<rt>ひょうか</rt></ruby>されたのも、<ruby>千代<rt>ちよ</rt></ruby>さんの<ruby>所<rt>ところ</rt></ruby>に<ruby>使者<rt>ししゃ</rt></ruby>として<ruby>来<rt>き</rt></ruby>た<ruby>人<rt>ひと</rt></ruby>の、<ruby>笠<rt>かさ</rt></ruby>の<ruby>緒<rt>お</rt></ruby>に<ruby>一豊<rt>かずとよ</rt></ruby>への<ruby>指示<rt>しじ</rt></ruby>を<ruby>書<rt>か</rt></ruby>いた<ruby>手紙<rt>てがみ</rt></ruby>を<ruby>仕込<rt>しこ</rt></ruby>んでおいて、<ruby>西軍<rt>せいぐん</rt></ruby>の<ruby>状況<rt>じょうきょう</rt></ruby>や<ruby>家康<rt>いえやす</rt></ruby>に<ruby>従<rt>したが</rt></ruby>うべきだと<ruby>書<rt>か</rt></ruby>いた<ruby>手紙<rt>てがみ</rt></ruby>を<ruby>箱<rt>はこ</rt></ruby>に<ruby>入<rt>い</rt></ruby>れて<ruby>開<rt>あ</rt></ruby>けないまま<ruby>家康<rt>いえやす</rt></ruby>に<ruby>届<rt>とど</rt></ruby>けさせたお<ruby>陰<rt>かげ</rt></ruby>っていう<ruby>話<rt>はなし</rt></ruby>があるぜ。</p>
+                        <p class="dialogContents">やっぱり<ruby>山内一豊<rt>やまうちかずとよ</rt></ruby>といえば、<ruby>奥<rt>おく</rt></ruby>さんの<ruby>千代<rt>ちよ</rt></ruby>さんだよな。<ruby>小山評定<rt>おやまひょうじょう</rt></ruby>の<ruby>時<rt>とき</rt></ruby>に<ruby>家康<rt>いえやす</rt></ruby>から<ruby>評価<rt>ひょうか</rt></ruby>されたのも、<ruby>千代<rt>ちよ</rt></ruby>さんの<ruby>所<rt>ところ</rt></ruby>に<ruby>使者<rt>ししゃ</rt></ruby>として<ruby>来<rt>き</rt></ruby>た<ruby>人<rt>ひと</rt></ruby>の、<ruby>笠<rt>かさ</rt></ruby>の<ruby>緒<rt>お</rt></ruby>に<ruby>一豊<rt>かずとよ</rt></ruby>への<ruby>指示<rt>しじ</rt></ruby>を<ruby>書<rt>か</rt></ruby>いた<ruby>手紙<rt>てがみ</rt></ruby>を<ruby>仕込<rt>しこ</rt></ruby>んでおいて、<ruby>一豊<rt>かずとよ</rt></ruby>が<ruby>西軍<rt>せいぐん</rt></ruby>にも<ruby>誘<rt>さそ</rt></ruby>われていることや、それでも<ruby>家康<rt>いえやす</rt></ruby>に<ruby>従<rt>したが</rt></ruby>うべきだと<ruby>書<rt>か</rt></ruby>いた<ruby>手紙<rt>てがみ</rt></ruby>を<ruby>箱<rt>はこ</rt></ruby>に<ruby>入<rt>い</rt></ruby>れて<ruby>開<rt>あ</rt></ruby>けないまま<ruby>家康<rt>いえやす</rt></ruby>に<ruby>届<rt>とど</rt></ruby>けさせたお<ruby>陰<rt>かげ</rt></ruby>っていう<ruby>話<rt>はなし</rt></ruby>があるぜ。</p>
                     </div>
                 </section>
                 <section class="rightPageSection">
@@ -8907,6 +8907,13 @@
                 aboutIllustSpan.classList.add("veryLongText");
             }
         }
+    });
+
+    // 福田さんにイラストについてのクレジットを追加
+    const ieyasuLeftPage = document.querySelector("#徳川家康 .leftPage");
+    const mitsunariLeftPage = document.querySelector("#石田三成 .leftPage");
+    [ieyasuLeftPage, mitsunariLeftPage].forEach(leftPage => {
+        leftPage.insertAdjacentHTML('beforeend', '<div class="illustratorName">illus. 福田彰宏（Akihiro Fukuda）</div>');
     });
 
 </script>

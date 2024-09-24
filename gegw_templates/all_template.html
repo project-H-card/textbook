@@ -137,5 +137,12 @@
         }
     });
 
+    // 福田さんにイラストについてのクレジットを追加
+    const ieyasuLeftPage = document.querySelector("#徳川家康 .leftPage");
+    const mitsunariLeftPage = document.querySelector("#石田三成 .leftPage");
+    [ieyasuLeftPage, mitsunariLeftPage].forEach(leftPage => {
+        leftPage.insertAdjacentHTML('beforeend', '<div class="illustratorName">illus. 福田彰宏（Akihiro Fukuda）</div>');
+    });
+
 </script>
 </html>

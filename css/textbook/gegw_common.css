@@ -172,6 +172,13 @@ p {
     font-family: 'Noto Sans JP';
 }
 
+.illustratorName {
+    position: absolute;
+    top: calc(45px * var(--rate));
+    left: calc(10px * var(--rate));
+    width: 60%;
+}
+
 .alias * {
     font-family: 'Noto Sans JP';
 }
@@ -621,6 +628,9 @@ p {
 }
 
 .radar-chart-3 dt {
+    /* width: max-content; */
+    /* padding: 0 calc(var(--rate) * 5px); */
+    width: calc(var(--rate) * 100px);
     margin: 0;
     font-size: 1.1em;
     font-weight: bold;
