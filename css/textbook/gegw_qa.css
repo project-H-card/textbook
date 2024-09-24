@@ -41,21 +41,25 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(45%, 1fr));
     justify-content: center;
-    padding-right: 2%;
-    margin-top: 4%;
+    /* padding-right: 2%; */
+    padding-right: 3%;
+    margin-top: 2%; /* 4% */
 }
 
 .rightPage .mainArea {
-    padding-left: 2%;
+    /* padding-left: 2%; */
+    padding-left: 3%;
     padding-right: 0;
-    margin-top: 4%;
+    margin-top: 2%; /* 4% */
 }
 
 .QA {
     /* width: 45%; */
     /* height: 30%; */
-    height: 90%;
-    margin: auto 1.75%;
+    /* height: 90%; */
+    height: 93%;
+    /* margin: auto 1.75%; */
+    margin: auto 1%;
     position: relative;
 }
 
@@ -87,7 +91,8 @@
     background: white;
     border-radius: calc(var(--rate) * 5px);
     padding: calc(var(--rate) * 15px) calc(var(--rate) * 5px);
-    padding-top: calc(var(--rate) * 20px);
+    /* padding-top: calc(var(--rate) * 20px); */
+    padding-top: calc(var(--rate) * 15px);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -96,12 +101,14 @@
 .dialogContents {
     color: black;
     text-shadow: none;
-    font-size: 0.65rem;
+    /* font-size: 0.65rem; */
+    font-size: 0.7rem;
 }
 
 .Q {
     font-weight: bold;
-    font-size: 0.9rem;
+    /* font-size: 0.9rem; */
+    font-size: 0.8rem;
 }
 .A {
     color: #ff3131;

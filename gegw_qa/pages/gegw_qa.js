@@ -26,10 +26,10 @@ Papa.parse(csvFilePath, {
                 if(pageCounter%2 == 1) {
                     currentPages += `
                         <div class="sidebar ${pageCounter > 3 ? 'east' : ''}">
+                            <div class="sidebarMargin"></div>
                             <div class="sidebarMain">
                                 <img src="../../assets/images/textbook/sidebar/${pageCounter > 3 ? '東軍' : '西軍'}.webp" alt="${pageCounter > 3 ? '東軍' : '西軍'}">
                             </div>
-                            <div class="sidebarMargin"></div>
                         </div>
                     `;
                 }
@@ -118,5 +118,14 @@ Papa.parse(csvFilePath, {
 
         // ページエリアに挿入
         document.querySelector('.pageArea').innerHTML = pageDivs;
+
+        const dialogs = document.querySelectorAll(".dialog");
+        dialogs.forEach(dialog => {
+            const dialogContents = dialog.querySelector(".dialogContents");
+            const dialogContentsText = dialogContents.innerHTML.replaceAll(/<rt>.*?<\/rt>/g, '').replaceAll("<ruby>", "").replaceAll("</ruby>", "");
+            if (dialogContentsText.length <= 48) {
+                dialog.classList.add("shortText");
+            }
+        });
     }
 });
