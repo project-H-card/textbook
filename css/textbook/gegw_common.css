@@ -177,6 +177,7 @@ p {
     top: calc(45px * var(--rate));
     left: calc(10px * var(--rate));
     width: 60%;
+    text-shadow: 0px 0px calc(1px* var(--rate)) black, 0px 0px calc(1px* var(--rate)) black, 0px 0px calc(1px* var(--rate)) black;
 }
 
 .alias * {
@@ -339,6 +340,7 @@ p {
     display: flex;
     margin-top: calc(10px * var(--rate));
     padding-right: calc(10px * var(--rate));
+    align-items: center;
 }
 
 .tips img {
@@ -351,14 +353,18 @@ p {
 .tipsContent {
     color: black;
     background: white;
-    border-radius: calc(5px * var(--rate));
+    /* border-radius: calc(5px * var(--rate)); */
+    border-radius: calc(2px * var(--rate));
     font-size: 0.8rem;
     font-weight: bold;
-    padding: calc(3px * var(--rate));
-    padding-top: calc(6px * var(--rate));
+    /* padding: calc(3px * var(--rate));
+    padding-top: calc(6px * var(--rate)); */
+    padding: calc(6px * var(--rate));
+    padding-bottom: calc(4px * var(--rate));
     position: relative;
     text-shadow: none;
     line-height: calc(12px * var(--rate));
+    height: max-content;
 }
 
 .tipsContent::after {
@@ -434,15 +440,18 @@ p {
 .sectionTitle {
     background-image: url("../../assets/images/textbook/common/title_flag.webp");
     background-size: cover;
-    width: 100%;
+    /* width: 100%; */
+    width: calc(827px / 6 * var(--rate));
     background-repeat: no-repeat;
     aspect-ratio: 672 / 116;
 
-    font-size: 1.4rem;
+    /* font-size: 1.4rem; */
+    font-size: 1.2rem;
     font-family: 'ZenMaruGothic';
     padding-left: calc(var(--rate) * 10px);
     margin: calc(var(--rate) * 5px) 0;
     font-weight: bold;
+    line-height: calc(var(--rate) * 130px / 6);
 }
 .sectionTitle * {
     font-family: 'ZenMaruGothic';
@@ -647,7 +656,7 @@ p {
     font-size: 1.6em;
     font-weight: bold;
     font-family: 'Roboto';
-    transform: translateY(-0.3em);
+    transform: translateY(-0.2em);
     color: black;
     --text-shadow-color: white;
     text-shadow: 0 0 calc(var(--rate) * 1px) var(--text-shadow-color), 0 0 calc(var(--rate) * 1px) var(--text-shadow-color), 0 0 calc(var(--rate) * 1px) var(--text-shadow-color), 0 0 calc(var(--rate) * 1px) var(--text-shadow-color), 0 0 calc(var(--rate) * 1px) var(--text-shadow-color), 0 0 calc(var(--rate) * 1px) var(--text-shadow-color), 0 0 calc(var(--rate) * 1px) var(--text-shadow-color), 0 0 calc(var(--rate) * 1px) var(--text-shadow-color), 0 0 calc(var(--rate) * 1px) var(--text-shadow-color), 0 0 calc(var(--rate) * 1px) var(--text-shadow-color), 0 0 calc(var(--rate) * 1px) var(--text-shadow-color), 0 0 calc(var(--rate) * 1px) var(--text-shadow-color), 0 0 calc(var(--rate) * 1px) var(--text-shadow-color);
@@ -729,7 +738,8 @@ p {
     border-radius: calc(2px * var(--rate));
     font-size: 0.9rem;
     font-weight: bold;
-    padding: calc(5px * var(--rate)) calc(3px * var(--rate));
+    /* padding: calc(5px * var(--rate)) calc(3px * var(--rate)); */
+    padding: calc(5px * var(--rate));
     position: relative;
     text-shadow: none;
     width: calc(100% - 40px * var(--rate));
