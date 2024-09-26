@@ -423,17 +423,18 @@ p {
 
 .rightHalfArea.right-left {
     /* width: 43%; */
-    width: 57%;
+    width: 58%;
     padding-left: calc(var(--rate) * 15px);
 }
 .rightHalfArea.right-right {
-    width: 43%;
+    width: 42%;
     /* width: 57%; */
     padding-right: calc(var(--rate) * 5px);
 }
 
 .separator {
-    border-right: 1px dotted #545454;
+    /* border-right: 1px dotted #545454; */
+    border-right: calc(var(--rate) * 0.25px) dotted #545454;
     height: 95%;
     margin: auto 0;
 }

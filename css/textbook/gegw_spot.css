@@ -128,6 +128,7 @@
 .mainRight .sectionTitle {
     width: 90%;
     font-family: 'ZenMaruGothic';
+    line-height: calc(var(--rate)* 142px / 6);
 }
 .mainRight .sectionTitle.smallFont {
     font-size: 1.2rem;
