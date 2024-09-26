@@ -46,6 +46,9 @@ def ruby(DATA_FILE_PATH, RESULT_FILE_PATH, SELF_RUBY_DATA_FILE_PATH, DONT_NEED_R
             if "|" in pair["surface"]:
                 pairs = pair["surface"].split("|")
                 furiganas = pair["furigana"].split("|")
+                if len(pairs) != len(furiganas):
+                    print(f"\033[31m{pair} が不正です。\033[0m")
+                    exit()
                 return {
                     "surface": "".join(pairs),
                     "replacement":  "".join([f'<ruby>{pairs[i]}<rt>{furiganas[i]}</rt></ruby>' if pairs[i] != furiganas[i] else f'{pairs[i]}' for i in range(len(pairs))])
