@@ -24,7 +24,7 @@ def add_page_numbers(image_path, page_number, font, output_path):
     text2 = str(page_number*2-1).zfill(3)
 
     # テキストのサイズと配置位置を指定
-    text_size = 40  # 文字のサイズを指定
+    text_size = 40 / 3381 * width  # 文字のサイズを指定
     font = ImageFont.truetype(font, text_size)
 
     # 左下と右下の座標を計算

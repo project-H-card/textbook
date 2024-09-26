@@ -227,8 +227,8 @@ p {
 }
 
 .aboutIllust p {
-    border-bottom: 1px solid white;
-    border-left: 1px solid white;
+    border-bottom: calc(var(--rate) * 0.25px) solid white;
+    border-left: calc(var(--rate) * 0.25px) solid white;
     padding-left: calc(8px * var(--rate));
     padding-bottom: calc(4px * var(--rate));
     border-radius: 0 0 0 calc(3px * var(--rate));
@@ -248,9 +248,10 @@ p {
 
 .aboutArmor {
     position: absolute;
-    width: 55%;
+    /* width: 55%; */
+    width: 50%;
     bottom: 10%;
-    right: 2%;
+    right: 5%;
 }
 .aboutArmor h3 {
     font-size: 2rem;
@@ -289,8 +290,10 @@ p {
 
 .profile {
     bottom: calc(20px * var(--rate));
-    left: calc(170px * var(--rate));
+    /* left: calc(170px * var(--rate)); */
+    right: 5%;
     position: absolute;
+    width: calc(200px * var(--rate));
 }
 
 /* .profile h3 {
@@ -339,7 +342,7 @@ p {
 .tips {
     display: flex;
     margin-top: calc(10px * var(--rate));
-    padding-right: calc(10px * var(--rate));
+    /* padding-right: calc(10px * var(--rate)); */
     align-items: center;
 }
 
@@ -419,11 +422,13 @@ p {
 }
 
 .rightHalfArea.right-left {
-    width: 43%;
+    /* width: 43%; */
+    width: 57%;
     padding-left: calc(var(--rate) * 15px);
 }
 .rightHalfArea.right-right {
-    width: 57%;
+    width: 43%;
+    /* width: 57%; */
     padding-right: calc(var(--rate) * 5px);
 }
 
@@ -565,6 +570,10 @@ p {
 .radar-chart-2 dd {
     margin: 0;
 } */
+
+.raderChart {
+    margin-bottom: calc(10px * var(--rate));
+}
 
 .radar-chart-3 {
     display: flex;
